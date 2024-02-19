@@ -1,0 +1,2246 @@
+{
+  "b": 209,
+  "disableInputWhenNotFocused": true,
+  "mangledName": "Editor",
+  "name": "Editor",
+  "r": 209,
+  "standardSortMethod": true,
+  "stopSoundsOnStartup": true,
+  "title": "",
+  "v": 209,
+  "uiSettings": {
+    "grid": true,
+    "gridType": "rectangular",
+    "gridWidth": 16,
+    "gridHeight": 16,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 0,
+    "gridAlpha": 0.11,
+    "snap": true,
+    "zoomFactor": 0.4633111824513977,
+    "windowMask": false
+  },
+  "objectsGroups": [
+    {
+      "name": "ItemButtons",
+      "objects": []
+    },
+    {
+      "name": "Draggables",
+      "objects": [
+        {
+          "name": "moveobj"
+        },
+        {
+          "name": "sizeobj"
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "name": "LevelInfo",
+      "type": "structure",
+      "children": [
+        {
+          "name": "Height",
+          "type": "number",
+          "value": 600
+        },
+        {
+          "folded": true,
+          "name": "LevelCode",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "folded": true,
+          "name": "Name",
+          "type": "string",
+          "value": "Level Name (Not Editable RN)"
+        },
+        {
+          "folded": true,
+          "name": "ObjectCount",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Width",
+          "type": "number",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "name": "selecteditembtn",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "selectedobj",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "folded": true,
+      "name": "gridsize",
+      "type": "number",
+      "value": 16
+    },
+    {
+      "folded": true,
+      "name": "camspeed",
+      "type": "number",
+      "value": 5
+    },
+    {
+      "folded": true,
+      "name": "lastid",
+      "type": "number",
+      "value": 1
+    },
+    {
+      "folded": true,
+      "name": "levelcodesave",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "folded": true,
+      "name": "Save_LoadArray",
+      "type": "array",
+      "children": []
+    },
+    {
+      "folded": true,
+      "name": "LoadClimb",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "loadjson",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "folded": true,
+      "name": "currentfolder",
+      "type": "string",
+      "value": "root"
+    },
+    {
+      "folded": true,
+      "name": "objangle",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "objsel",
+      "type": "number",
+      "value": -1
+    }
+  ],
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "bounds",
+      "persistentUuid": "b4e12bfe-6bc9-4fc8-953f-6be4d5c989d6",
+      "width": 0,
+      "x": 0,
+      "y": 0,
+      "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "levelbg",
+      "persistentUuid": "3dfe878d-7d1f-436f-a677-52e168b35c13",
+      "width": 0,
+      "x": 0,
+      "y": 0,
+      "zOrder": -5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "gridmain",
+      "persistentUuid": "71316d57-ea9a-4852-b389-b67ab88a21be",
+      "width": 0,
+      "x": 0,
+      "y": 0,
+      "zOrder": -1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 290,
+      "layer": "",
+      "name": "gridbackup",
+      "persistentUuid": "568d2b93-a96f-469f-b16a-fe13eea0e347",
+      "width": 290,
+      "x": 0,
+      "y": 0,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LevelName",
+      "persistentUuid": "16e6905a-f140-49b1-9ff0-73b324c5be29",
+      "width": 0,
+      "x": 0,
+      "y": -70,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LevelInfo",
+      "persistentUuid": "b4e1258c-aa90-4287-8a03-f29b9b25f3b5",
+      "width": 0,
+      "x": 268,
+      "y": -47,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 720,
+      "layer": "UI",
+      "name": "objectsbg",
+      "persistentUuid": "6c497dca-941d-4404-8811-9d29df18c634",
+      "width": 295,
+      "x": -341,
+      "y": 0,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 64,
+      "layer": "ObjectsList",
+      "name": "objectsList",
+      "persistentUuid": "b5ce3985-3627-4c03-9879-73f3846f171a",
+      "width": 64,
+      "x": -432,
+      "y": 0,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 64,
+      "layer": "ObjListItems",
+      "name": "objectlistitembg",
+      "persistentUuid": "98574b3d-e867-4842-b075-7b1606df0723",
+      "width": 64,
+      "x": 16,
+      "y": 880,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "position",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": "floors"
+        },
+        {
+          "folded": true,
+          "name": "object",
+          "type": "string",
+          "value": "main_block"
+        },
+        {
+          "folded": true,
+          "name": "title",
+          "type": "string",
+          "value": "Basic Block"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UI",
+      "name": "controls_for_devs_and_playtest",
+      "persistentUuid": "609f098c-b2fd-4483-b97d-a98745b0bc0b",
+      "width": 0,
+      "x": 12,
+      "y": 480,
+      "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 32,
+      "layer": "ContextWindow",
+      "name": "contextwindowtop",
+      "persistentUuid": "f7a6a55e-fe84-4b2e-973e-74a7e86c399f",
+      "width": 256,
+      "x": -942,
+      "y": -32,
+      "zOrder": 10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 240,
+      "layer": "ContextWindow",
+      "name": "contextwindowbg",
+      "persistentUuid": "49aa84b7-c1f0-4272-9128-6ce4724ab58b",
+      "width": 256,
+      "x": -944,
+      "y": 0,
+      "zOrder": 11,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 64,
+      "layer": "ObjListItems",
+      "name": "objectlistitembg",
+      "persistentUuid": "1704f67f-8481-4230-b14f-c7246556d23b",
+      "width": 64,
+      "x": 96,
+      "y": 880,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": "mech"
+        },
+        {
+          "folded": true,
+          "name": "position",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "folded": true,
+          "name": "object",
+          "type": "string",
+          "value": "doublejump"
+        },
+        {
+          "folded": true,
+          "name": "title",
+          "type": "string",
+          "value": "Jump Orb"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 64,
+      "layer": "ObjListItems",
+      "name": "objectlistitembg",
+      "persistentUuid": "b366238f-a2f5-4872-86a5-55df36914b11",
+      "width": 64,
+      "x": 176,
+      "y": 880,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": "gadgets"
+        },
+        {
+          "folded": true,
+          "name": "position",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "folded": true,
+          "name": "object",
+          "type": "string",
+          "value": "player_spawnpoint"
+        },
+        {
+          "folded": true,
+          "name": "title",
+          "type": "string",
+          "value": "Player Spawn"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 64,
+      "layer": "ObjListItems",
+      "name": "objectlistitembg",
+      "persistentUuid": "ac32132e-d1c9-4500-a397-a733a7cea099",
+      "width": 64,
+      "x": 256,
+      "y": 880,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": "hazards"
+        },
+        {
+          "folded": true,
+          "name": "position",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "folded": true,
+          "name": "object",
+          "type": "string",
+          "value": "spike_fatal"
+        },
+        {
+          "folded": true,
+          "name": "title",
+          "type": "string",
+          "value": "Spike"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 64,
+      "layer": "ObjListItems",
+      "name": "objectlistitembg",
+      "persistentUuid": "afc569b2-690f-4b3d-bc31-5e6a71af68d3",
+      "width": 64,
+      "x": -64,
+      "y": 880,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 999998
+        },
+        {
+          "folded": true,
+          "name": "isfolder",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": "root"
+        },
+        {
+          "folded": true,
+          "name": "object",
+          "type": "string",
+          "value": "floors"
+        },
+        {
+          "folded": true,
+          "name": "title",
+          "type": "string",
+          "value": "Walls/Floors"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 64,
+      "layer": "ObjListItems",
+      "name": "objectlistitembg",
+      "persistentUuid": "d52551f1-2fe2-459f-917f-51589089f180",
+      "width": 64,
+      "x": 16,
+      "y": 800,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 9999998
+        },
+        {
+          "folded": true,
+          "name": "isfolder",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "folded": true,
+          "name": "position",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": "floors"
+        },
+        {
+          "folded": true,
+          "name": "object",
+          "type": "string",
+          "value": "root"
+        },
+        {
+          "folded": true,
+          "name": "title",
+          "type": "string",
+          "value": "Back"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 64,
+      "layer": "ObjListItems",
+      "name": "objectlistitembg",
+      "persistentUuid": "9ea0c87b-22a5-4e94-b601-8e5c0a1b3b73",
+      "width": 64,
+      "x": -64,
+      "y": 944,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "position",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "folded": true,
+          "name": "title",
+          "type": "string",
+          "value": "Hazards"
+        },
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 999999
+        },
+        {
+          "folded": true,
+          "name": "isfolder",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": "root"
+        },
+        {
+          "folded": true,
+          "name": "object",
+          "type": "string",
+          "value": "hazards"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 64,
+      "layer": "ObjListItems",
+      "name": "objectlistitembg",
+      "persistentUuid": "ccae4a25-2fce-46e6-aaeb-b96a9ce7e209",
+      "width": 64,
+      "x": -64,
+      "y": 1008,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "position",
+          "type": "number",
+          "value": 2
+        },
+        {
+          "folded": true,
+          "name": "title",
+          "type": "string",
+          "value": "Gadgets"
+        },
+        {
+          "folded": true,
+          "name": "isfolder",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": "root"
+        },
+        {
+          "folded": true,
+          "name": "object",
+          "type": "string",
+          "value": "gadgets"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 64,
+      "layer": "ObjListItems",
+      "name": "objectlistitembg",
+      "persistentUuid": "474f6b11-a2b5-40de-afcb-8241f405adf2",
+      "width": 64,
+      "x": -64,
+      "y": 1072,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "position",
+          "type": "number",
+          "value": 3
+        },
+        {
+          "folded": true,
+          "name": "title",
+          "type": "string",
+          "value": "Mechanics"
+        },
+        {
+          "folded": true,
+          "name": "isfolder",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": "root"
+        },
+        {
+          "folded": true,
+          "name": "object",
+          "type": "string",
+          "value": "mech"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 64,
+      "layer": "ObjListItems",
+      "name": "objectlistitembg",
+      "persistentUuid": "08996c8f-2ecb-4596-a851-453bb581fbef",
+      "width": 64,
+      "x": 96,
+      "y": 800,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "isfolder",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "folded": true,
+          "name": "position",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": "mech"
+        },
+        {
+          "folded": true,
+          "name": "object",
+          "type": "string",
+          "value": "root"
+        },
+        {
+          "folded": true,
+          "name": "title",
+          "type": "string",
+          "value": "Back"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 64,
+      "layer": "ObjListItems",
+      "name": "objectlistitembg",
+      "persistentUuid": "68e61eb2-3333-4af4-b013-0f016cd2ea00",
+      "width": 64,
+      "x": 176,
+      "y": 800,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "isfolder",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "folded": true,
+          "name": "position",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": "gadgets"
+        },
+        {
+          "folded": true,
+          "name": "object",
+          "type": "string",
+          "value": "root"
+        },
+        {
+          "folded": true,
+          "name": "title",
+          "type": "string",
+          "value": "Back"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 64,
+      "layer": "ObjListItems",
+      "name": "objectlistitembg",
+      "persistentUuid": "7e37c08d-2ead-49ce-b189-9ba931a303fc",
+      "width": 64,
+      "x": 256,
+      "y": 800,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "isfolder",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "folded": true,
+          "name": "position",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": "hazards"
+        },
+        {
+          "folded": true,
+          "name": "object",
+          "type": "string",
+          "value": "root"
+        },
+        {
+          "folded": true,
+          "name": "title",
+          "type": "string",
+          "value": "Back"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "ContextWindow",
+      "name": "moveobj",
+      "persistentUuid": "1328e1e8-1b2e-4134-8bee-1cb664a80ffb",
+      "width": 0,
+      "x": -944,
+      "y": 272,
+      "zOrder": 12,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "ContextWindow",
+      "name": "sizeobj",
+      "persistentUuid": "9d4f5252-d3ac-4574-8256-c3ac4bbf7aba",
+      "width": 0,
+      "x": -912,
+      "y": 272,
+      "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
+  "objects": [
+    {
+      "assetStoreId": "",
+      "bottomMargin": 2,
+      "height": 32,
+      "leftMargin": 2,
+      "name": "bounds",
+      "rightMargin": 2,
+      "texture": "New image",
+      "tiled": false,
+      "topMargin": 2,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 32,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "levelbg",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite7",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "height": 32,
+      "name": "gridmain",
+      "texture": "New image2",
+      "type": "TiledSpriteObject::TiledSprite",
+      "width": 32,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "assetStoreId": "",
+      "height": 32,
+      "name": "gridbackup",
+      "texture": "New image4",
+      "type": "TiledSpriteObject::TiledSprite",
+      "width": 32,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "LevelName",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Level Name",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 50,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "LevelInfo",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Level Info",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 25,
+      "color": {
+        "b": 133,
+        "g": 133,
+        "r": 133
+      }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "objectsbg",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Untitled (21).png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 320,
+                        "y": 0
+                      },
+                      {
+                        "x": 320,
+                        "y": 500
+                      },
+                      {
+                        "x": 0,
+                        "y": 500
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "object_select_bg",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "object_name",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "folded": true,
+          "name": "text",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "folded": true,
+          "name": "itemid",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "image_name",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Untitled (22).png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 500,
+                        "y": 0
+                      },
+                      {
+                        "x": 500,
+                        "y": 500
+                      },
+                      {
+                        "x": 0,
+                        "y": 500
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "object_image",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite13",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bottomMargin": 0,
+      "height": 42,
+      "leftMargin": 0,
+      "name": "object_image_fix",
+      "rightMargin": 0,
+      "texture": "New image5",
+      "tiled": true,
+      "topMargin": 0,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 42,
+      "variables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "objectsList",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite14",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "objectlistitemtitle",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "string": "Title",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "objectlistitembg",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "title",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "folded": true,
+          "name": "object",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "folded": true,
+          "name": "isfolder",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "folded": true,
+          "name": "position",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite15",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "controls_for_devs_and_playtest",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "string": "Controls (for playtesters/devs)\nCamera: WASD (Shift for speed CTRL for slow)\nClick to Place Current Object\nMove your Cursor to the Left Side of the Screen to Select a new Object\nShift+Right Click an Object to Delete (Gonna Change)\nGRID SIZING:\nShift to do a 1:1 grid size for placement\nCTRL to do 8:8 grid size for placement\nNothing to do 4:4  grid size for placement\nThats it (Click text to Hide, or autohides after 15 seconds)",
+      "font": "",
+      "textAlignment": "right",
+      "characterSize": 20,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "save_loadtext",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "string": "Saved!/Loaded!",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 40,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "contextwindowbg",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite20",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "contextwindowtop",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite21",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "foldericon",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite28",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 5,
+                        "y": 8
+                      },
+                      {
+                        "x": 27,
+                        "y": 8
+                      },
+                      {
+                        "x": 27,
+                        "y": 24
+                      },
+                      {
+                        "x": 5,
+                        "y": 24
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "foldericon",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "foldericon",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 5,
+                        "y": 8
+                      },
+                      {
+                        "x": 27,
+                        "y": 8
+                      },
+                      {
+                        "x": 27,
+                        "y": 24
+                      },
+                      {
+                        "x": 5,
+                        "y": 24
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "moveobj",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Draggable",
+          "type": "DraggableBehavior::Draggable",
+          "checkCollisionMask": true
+        }
+      ],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite32",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 16,
+                        "y": 0
+                      },
+                      {
+                        "x": 16,
+                        "y": 16
+                      },
+                      {
+                        "x": 0,
+                        "y": 16
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "sizeobj",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Draggable",
+          "type": "DraggableBehavior::Draggable",
+          "checkCollisionMask": true
+        }
+      ],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite31",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 16,
+                        "y": 0
+                      },
+                      {
+                        "x": 16,
+                        "y": 16
+                      },
+                      {
+                        "x": 0,
+                        "y": 16
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "objectName": "bounds"
+      },
+      {
+        "objectName": "levelbg"
+      },
+      {
+        "objectName": "gridmain"
+      },
+      {
+        "objectName": "gridbackup"
+      },
+      {
+        "objectName": "LevelName"
+      },
+      {
+        "objectName": "LevelInfo"
+      },
+      {
+        "objectName": "objectsbg"
+      },
+      {
+        "objectName": "object_select_bg"
+      },
+      {
+        "objectName": "object_image"
+      },
+      {
+        "objectName": "object_image_fix"
+      },
+      {
+        "objectName": "objectsList"
+      },
+      {
+        "objectName": "objectlistitemtitle"
+      },
+      {
+        "objectName": "objectlistitembg"
+      },
+      {
+        "objectName": "controls_for_devs_and_playtest"
+      },
+      {
+        "objectName": "save_loadtext"
+      },
+      {
+        "objectName": "contextwindowbg"
+      },
+      {
+        "objectName": "contextwindowtop"
+      },
+      {
+        "objectName": "foldericon"
+      },
+      {
+        "objectName": "moveobj"
+      },
+      {
+        "objectName": "sizeobj"
+      }
+    ]
+  },
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarGlobalTxt"
+          },
+          "parameters": [
+            "DiscordPresence",
+            "=",
+            "\"Editing a Level, \"+VariableString(LevelInfo.Name)"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "Editor"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "Discord"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "MettreX"
+          },
+          "parameters": [
+            "controls_for_devs_and_playtest",
+            "=",
+            "SceneWindowWidth()-(controls_for_devs_and_playtest.Width()+5)"
+          ]
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "perspective",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [
+        {
+          "defaultSize": true,
+          "defaultViewport": true,
+          "height": 0,
+          "viewportBottom": 1,
+          "viewportLeft": 0,
+          "viewportRight": 1,
+          "viewportTop": 0,
+          "width": 0
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Light",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "groundColor": "64;64;64",
+            "skyColor": "255;255;255",
+            "top": "Y-"
+          },
+          "booleanParameters": {}
+        }
+      ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "perspective",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "UI",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Light",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "groundColor": "64;64;64",
+            "skyColor": "255;255;255",
+            "top": "Y-"
+          },
+          "booleanParameters": {}
+        }
+      ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "perspective",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "ContextWindow",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Light",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "groundColor": "64;64;64",
+            "skyColor": "255;255;255",
+            "top": "Y-"
+          },
+          "booleanParameters": {}
+        }
+      ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "perspective",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "ObjectsList",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Light",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "groundColor": "64;64;64",
+            "skyColor": "255;255;255",
+            "top": "Y-"
+          },
+          "booleanParameters": {}
+        }
+      ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "perspective",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "ObjListItems",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Light",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "groundColor": "64;64;64",
+            "skyColor": "255;255;255",
+            "top": "Y-"
+          },
+          "booleanParameters": {}
+        }
+      ]
+    }
+  ],
+  "behaviorsSharedData": [
+    {
+      "name": "AdvancedJump",
+      "type": "AdvancedJump::AdvancedJump"
+    },
+    {
+      "name": "Animation",
+      "type": "AnimatableCapability::AnimatableBehavior"
+    },
+    {
+      "name": "Effect",
+      "type": "EffectCapability::EffectBehavior"
+    },
+    {
+      "name": "Flippable",
+      "type": "FlippableCapability::FlippableBehavior"
+    },
+    {
+      "name": "HorizontalDash",
+      "type": "AdvancedJump::HorizontalDash"
+    },
+    {
+      "name": "Opacity",
+      "type": "OpacityCapability::OpacityBehavior"
+    },
+    {
+      "name": "Platform",
+      "type": "PlatformBehavior::PlatformBehavior"
+    },
+    {
+      "name": "PlatformerConfigurationStack",
+      "type": "AdvancedJump::PlatformerConfigurationStack"
+    },
+    {
+      "name": "PlatformerObject",
+      "type": "PlatformBehavior::PlatformerObjectBehavior"
+    },
+    {
+      "name": "Resizable",
+      "type": "ResizableCapability::ResizableBehavior"
+    },
+    {
+      "name": "Scale",
+      "type": "ScalableCapability::ScalableBehavior"
+    },
+    {
+      "name": "Text",
+      "type": "TextContainerCapability::TextContainerBehavior"
+    },
+    {
+      "name": "Tween",
+      "type": "Tween::TweenBehavior"
+    },
+    {
+      "name": "WallJump",
+      "type": "AdvancedJump::WallJump"
+    }
+  ]
+}

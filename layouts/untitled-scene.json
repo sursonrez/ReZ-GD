@@ -1,0 +1,703 @@
+{
+  "b": 173,
+  "disableInputWhenNotFocused": true,
+  "mangledName": "Untitled_32scene",
+  "name": "Untitled scene",
+  "r": 173,
+  "standardSortMethod": true,
+  "stopSoundsOnStartup": true,
+  "title": "",
+  "v": 173,
+  "uiSettings": {
+    "grid": true,
+    "gridType": "rectangular",
+    "gridWidth": 16,
+    "gridHeight": 16,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 16777215,
+    "gridAlpha": 0.05,
+    "snap": true,
+    "zoomFactor": 0.15504105304552826,
+    "windowMask": false
+  },
+  "objectsGroups": [],
+  "variables": [
+    {
+      "name": "LevelInfo",
+      "type": "structure",
+      "children": [
+        {
+          "name": "Height",
+          "type": "number",
+          "value": 200
+        },
+        {
+          "folded": true,
+          "name": "LevelCode",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "folded": true,
+          "name": "Name",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "Width",
+          "type": "number",
+          "value": 500
+        }
+      ]
+    }
+  ],
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "_player",
+      "persistentUuid": "b8204570-355a-4e7c-8c60-a69a917e205f",
+      "width": 0,
+      "x": 1629,
+      "y": 2131,
+      "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 256,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "7096c3b1-2f0d-4e65-825e-a0681fadadc0",
+      "width": 96,
+      "x": 1968,
+      "y": 1808,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 1120,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "d047e13f-468c-4eef-978b-69eaaa214646",
+      "width": 3728,
+      "x": 1488,
+      "y": 2240,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "dashPart",
+      "persistentUuid": "0a283a53-fa29-4c43-be02-a18c0a9b9a07",
+      "width": 0,
+      "x": 1664,
+      "y": 1968,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 96,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "c1bce200-79be-4abb-a4c0-0a09c74aed5e",
+      "width": 368,
+      "x": 2064,
+      "y": 1808,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 304,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "24f45078-b1d3-4af9-b5e3-7fa1f3b54c39",
+      "width": 96,
+      "x": 2432,
+      "y": 1808,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 512,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "740af5e0-e898-4e45-9a77-b2177bbe47cf",
+      "width": 96,
+      "x": 1680,
+      "y": 1552,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 96,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "dd27a083-6a96-4812-b958-e00af78db046",
+      "width": 848,
+      "x": 1680,
+      "y": 1456,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 2832,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "2b0ff187-1926-4c69-bdef-107a80b58e06",
+      "width": 1680,
+      "x": -192,
+      "y": 544,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 344,
+      "customSize": true,
+      "depth": 1,
+      "height": 96,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "4f8d3908-008f-4b6a-8ce6-e5f6ff70c01e",
+      "width": 848,
+      "x": 1677,
+      "y": 1334,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 624,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "63f52792-08c2-45a4-a963-699931159ba7",
+      "width": 64,
+      "x": 2496,
+      "y": 928,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 112,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "0cea8159-63c4-4aff-8447-de73257c1c5d",
+      "width": 496,
+      "x": 2016,
+      "y": 1376,
+      "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 80,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "e3eddc91-4537-419d-92a1-32586614ead6",
+      "width": 224,
+      "x": 2288,
+      "y": 1312,
+      "zOrder": 10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 1040,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "f832f284-c17a-450a-9d63-eae600dd0f59",
+      "width": 4032,
+      "x": -496,
+      "y": -400,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 32,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "fb5816ac-b8e1-44c1-a40a-7f42c89fd5aa",
+      "width": 736,
+      "x": 2560,
+      "y": 1168,
+      "zOrder": 11,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 688,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "22c4cd7f-5c98-40bb-9267-3280868c90cb",
+      "width": 1920,
+      "x": 3456,
+      "y": 1552,
+      "zOrder": 12,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 15,
+      "customSize": true,
+      "depth": 1,
+      "height": 96,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "4b8cf9fc-dbfc-47f8-9323-2f0355415acb",
+      "width": 512,
+      "x": 2752,
+      "y": 1854,
+      "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 96,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "a0ea4f27-c82d-45e1-9bdc-081bb73fdf55",
+      "width": 752,
+      "x": 3120,
+      "y": 1552,
+      "zOrder": 14,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 96,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "3fad5a4c-0295-4ca0-882b-9a49cef385ac",
+      "width": 288,
+      "x": 2928,
+      "y": 1648,
+      "zOrder": 15,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 768,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "aa51cfad-8455-46dd-b2cc-4c93f6aa886b",
+      "width": 80,
+      "x": 3456,
+      "y": 592,
+      "zOrder": 12,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 224,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "66ce9f3a-c0c4-4a3c-b548-ac9c51e974b6",
+      "width": 1760,
+      "x": 3776,
+      "y": 1344,
+      "zOrder": 12,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 1568,
+      "layer": "",
+      "name": "main_block",
+      "persistentUuid": "e436e0ee-52a8-45d1-b120-ef9739d6a18b",
+      "width": 2496,
+      "x": 3536,
+      "y": -208,
+      "zOrder": 17,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "demotext",
+      "persistentUuid": "ec63d4f8-5925-4d12-8123-916ff41a294d",
+      "width": 0,
+      "x": 3520,
+      "y": 1392,
+      "zOrder": 18,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 322,
+      "layer": "",
+      "name": "demotext2",
+      "persistentUuid": "d7c17205-e403-4f34-aeb4-e9c8fc0dfae0",
+      "width": 800,
+      "x": 1232,
+      "y": 1808,
+      "zOrder": 19,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "doublejump",
+      "persistentUuid": "f5860280-11c0-4668-a89c-6443f740a0bb",
+      "width": 0,
+      "x": 1824,
+      "y": 1872,
+      "zOrder": 20,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
+  "objects": [
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "demotext",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "End of Demo Loser.",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "demotext2",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "READ ME\nSpinning gives you low gravity and high jumps until you touch the ground or wall jump, you can double jump but not if you have low gravity\nControls:\nArrow Controls (Main):\nArrows: Move\nZ: Jump\nX: Dash\nC: Spin\nWASD Controls (Bad):\nWASD: Move\nJ: Spin\nK: Dash\nSpace: Jump\nHave Fun!",
+      "font": "",
+      "textAlignment": "center",
+      "characterSize": 20,
+      "color": {
+        "b": 255,
+        "g": 165,
+        "r": 0
+      }
+    }
+  ],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "objectName": "demotext"
+      },
+      {
+        "objectName": "demotext2"
+      }
+    ]
+  },
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarGlobalTxt"
+          },
+          "parameters": [
+            "DiscordPresence",
+            "=",
+            "\"Playing a Level\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "Main"
+    }
+  ],
+  "layers": [
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "perspective",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "TileBGS",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Light",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "groundColor": "64;64;64",
+            "skyColor": "255;255;255",
+            "top": "Y-"
+          },
+          "booleanParameters": {}
+        }
+      ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "perspective",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [
+        {
+          "defaultSize": true,
+          "defaultViewport": true,
+          "height": 0,
+          "viewportBottom": 1,
+          "viewportLeft": 0,
+          "viewportRight": 1,
+          "viewportTop": 0,
+          "width": 0
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Light",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "groundColor": "64;64;64",
+            "skyColor": "255;255;255",
+            "top": "Y-"
+          },
+          "booleanParameters": {}
+        }
+      ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "perspective",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "UI",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Light",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "groundColor": "64;64;64",
+            "skyColor": "255;255;255",
+            "top": "Y-"
+          },
+          "booleanParameters": {}
+        }
+      ]
+    }
+  ],
+  "behaviorsSharedData": [
+    {
+      "name": "AdvancedJump",
+      "type": "AdvancedJump::AdvancedJump"
+    },
+    {
+      "name": "Animation",
+      "type": "AnimatableCapability::AnimatableBehavior"
+    },
+    {
+      "name": "Effect",
+      "type": "EffectCapability::EffectBehavior"
+    },
+    {
+      "name": "Flippable",
+      "type": "FlippableCapability::FlippableBehavior"
+    },
+    {
+      "name": "HorizontalDash",
+      "type": "AdvancedJump::HorizontalDash"
+    },
+    {
+      "name": "Opacity",
+      "type": "OpacityCapability::OpacityBehavior"
+    },
+    {
+      "name": "Platform",
+      "type": "PlatformBehavior::PlatformBehavior"
+    },
+    {
+      "name": "PlatformerConfigurationStack",
+      "type": "AdvancedJump::PlatformerConfigurationStack"
+    },
+    {
+      "name": "PlatformerObject",
+      "type": "PlatformBehavior::PlatformerObjectBehavior"
+    },
+    {
+      "name": "Resizable",
+      "type": "ResizableCapability::ResizableBehavior"
+    },
+    {
+      "name": "Scale",
+      "type": "ScalableCapability::ScalableBehavior"
+    },
+    {
+      "name": "Text",
+      "type": "TextContainerCapability::TextContainerBehavior"
+    },
+    {
+      "name": "Tween",
+      "type": "Tween::TweenBehavior"
+    },
+    {
+      "name": "WallJump",
+      "type": "AdvancedJump::WallJump"
+    }
+  ]
+}

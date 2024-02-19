@@ -1,0 +1,79 @@
+{
+  "associatedLayout": "EditorPlaytest",
+  "lastChangeTimeStamp": 0,
+  "name": "Discord",
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "GlobalVariableAsBoolean"
+          },
+          "parameters": [
+            "DiscordInit",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "DiscordRichPresence::ConnectToDiscord"
+          },
+          "parameters": [
+            "",
+            "\"1203530592847790132\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Wait"
+          },
+          "parameters": [
+            ".01"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetGlobalVariableAsBoolean"
+          },
+          "parameters": [
+            "DiscordInit",
+            "True"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "DiscordRichPresence::UpdateRichPresence"
+          },
+          "parameters": [
+            "",
+            "\"Playing ReZ\"",
+            "GlobalVariableString(DiscordPresence)",
+            "",
+            "",
+            "\"logo\"",
+            "\"ReZ Logo\"",
+            "",
+            "",
+            ""
+          ]
+        }
+      ]
+    }
+  ]
+}
