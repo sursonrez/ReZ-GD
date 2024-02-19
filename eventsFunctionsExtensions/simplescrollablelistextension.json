@@ -1735,7 +1735,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "IconOffsetX"
         },
         {
@@ -1745,7 +1744,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "IconOffsetY"
         },
         {
@@ -1755,7 +1753,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "TitleOffsetX"
         },
         {
@@ -1765,7 +1762,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "TitleOffsetY"
         },
         {
@@ -1775,7 +1771,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "TextOffsetX"
         },
         {
@@ -1785,7 +1780,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "TextOffsetY"
         },
         {
@@ -1795,7 +1789,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "Z_Order"
         }
       ],

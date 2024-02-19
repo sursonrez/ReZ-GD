@@ -364,7 +364,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "ID"
         },
         {
@@ -379,7 +378,6 @@
             "up",
             "down"
           ],
-          "hidden": false,
           "name": "Direction"
         },
         {
@@ -393,7 +391,6 @@
             "nowrap",
             "wrap-reverse"
           ],
-          "hidden": false,
           "name": "Wrap"
         },
         {
@@ -410,7 +407,6 @@
             "space-around",
             "space-evenly"
           ],
-          "hidden": false,
           "name": "JustifyContent"
         },
         {
@@ -425,7 +421,6 @@
             "flex-end",
             "center"
           ],
-          "hidden": false,
           "name": "AlignItems"
         },
         {
@@ -444,7 +439,6 @@
             "space-evenly",
             "stretch"
           ],
-          "hidden": false,
           "name": "AlignContent"
         },
         {
@@ -454,7 +448,6 @@
           "description": "",
           "group": "Layout",
           "extraInformation": [],
-          "hidden": false,
           "name": "Gap"
         }
       ],
@@ -825,7 +818,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "ContainerID"
         },
         {
@@ -835,7 +827,6 @@
           "description": "",
           "group": "Sizing",
           "extraInformation": [],
-          "hidden": false,
           "name": "Growth"
         },
         {
@@ -845,7 +836,6 @@
           "description": "",
           "group": "Sizing",
           "extraInformation": [],
-          "hidden": false,
           "name": "Shrink"
         },
         {
@@ -855,7 +845,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "Order"
         },
         {
@@ -871,7 +860,6 @@
             "center",
             "stretch"
           ],
-          "hidden": false,
           "name": "AlignSelf"
         },
         {
@@ -881,7 +869,6 @@
           "description": "",
           "group": "Sizing",
           "extraInformation": [],
-          "hidden": false,
           "name": "FullWidth"
         },
         {
@@ -891,7 +878,6 @@
           "description": "",
           "group": "Sizing",
           "extraInformation": [],
-          "hidden": false,
           "name": "FullHeight"
         }
       ],

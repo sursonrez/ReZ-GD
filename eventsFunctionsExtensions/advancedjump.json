@@ -1585,7 +1585,6 @@
           "extraInformation": [
             "PlatformBehavior::PlatformerObjectBehavior"
           ],
-          "hidden": false,
           "name": "PlatformerBehavior"
         },
         {
@@ -1596,7 +1595,6 @@
           "description": "",
           "group": "Coyote time",
           "extraInformation": [],
-          "hidden": false,
           "name": "CoyoteTimeFrameDuration"
         },
         {
@@ -1626,7 +1624,6 @@
           "description": "",
           "group": "Air jump",
           "extraInformation": [],
-          "hidden": false,
           "name": "AirJumpCountMaximum"
         },
         {
@@ -1636,7 +1633,6 @@
           "description": "",
           "group": "Air jump",
           "extraInformation": [],
-          "hidden": false,
           "name": "AreFloorJumpCountedAsAirJump"
         },
         {
@@ -4243,7 +4239,6 @@
           "extraInformation": [
             "PlatformBehavior::PlatformerObjectBehavior"
           ],
-          "hidden": false,
           "name": "PlatformerCharacter"
         },
         {
@@ -4255,7 +4250,6 @@
           "extraInformation": [
             "AdvancedJump::PlatformerConfigurationStack"
           ],
-          "hidden": false,
           "name": "PlatformerConfigurationStack"
         },
         {
@@ -4266,7 +4260,6 @@
           "description": "",
           "group": "Wall jump",
           "extraInformation": [],
-          "hidden": false,
           "name": "JumpTimeFrame"
         },
         {
@@ -4277,7 +4270,6 @@
           "description": "",
           "group": "Wall jump",
           "extraInformation": [],
-          "hidden": false,
           "name": "WallJumpSpeedX"
         },
         {
@@ -4288,7 +4280,6 @@
           "description": "",
           "group": "Wall jump",
           "extraInformation": [],
-          "hidden": false,
           "name": "WallJumpAccelerationX"
         },
         {
@@ -4299,7 +4290,6 @@
           "description": "",
           "group": "Wall jump",
           "extraInformation": [],
-          "hidden": false,
           "name": "SideSpeedSustainTime"
         },
         {
@@ -4310,7 +4300,6 @@
           "description": "",
           "group": "Wall sliding",
           "extraInformation": [],
-          "hidden": false,
           "name": "WallSlidingGravity"
         },
         {
@@ -4321,7 +4310,6 @@
           "description": "",
           "group": "Wall sliding",
           "extraInformation": [],
-          "hidden": false,
           "name": "WallSlidingMaxFallingSpeed"
         },
         {
@@ -4332,7 +4320,6 @@
           "description": "",
           "group": "Wall sliding",
           "extraInformation": [],
-          "hidden": false,
           "name": "WallSlidingSpeedAbsorption"
         },
         {
@@ -4343,7 +4330,6 @@
           "description": "",
           "group": "Wall sliding",
           "extraInformation": [],
-          "hidden": false,
           "name": "WallSlidingFallingSpeedMin"
         },
         {
@@ -4353,7 +4339,6 @@
           "description": "",
           "group": "Wall sliding",
           "extraInformation": [],
-          "hidden": false,
           "name": "AutomaticSliding"
         },
         {
@@ -4763,7 +4748,6 @@
           "extraInformation": [
             "PlatformBehavior::PlatformerObjectBehavior"
           ],
-          "hidden": false,
           "name": "PlatformerCharacter"
         },
         {
@@ -4775,7 +4759,6 @@
           "extraInformation": [
             "AdvancedJump::PlatformerConfigurationStack"
           ],
-          "hidden": false,
           "name": "PlatformerConfigurationStack"
         },
         {
@@ -4786,7 +4769,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "DiveMaxFallingSpeed"
         },
         {
@@ -4797,7 +4779,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "DiveInitialFallingSpeed"
         },
         {
@@ -4808,7 +4789,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "DiveGravity"
         },
         {
@@ -5832,7 +5812,6 @@
           "extraInformation": [
             "PlatformBehavior::PlatformerObjectBehavior"
           ],
-          "hidden": false,
           "name": "PlatformerCharacter"
         },
         {
@@ -5844,7 +5823,6 @@
           "extraInformation": [
             "AdvancedJump::PlatformerConfigurationStack"
           ],
-          "hidden": false,
           "name": "PlatformerConfigurationStack"
         },
         {
@@ -5854,7 +5832,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "DashInitialSpeed"
         },
         {
@@ -5864,7 +5841,6 @@
           "description": "",
           "group": "Sustain",
           "extraInformation": [],
-          "hidden": false,
           "name": "DashSustainDurationMin"
         },
         {
@@ -5874,7 +5850,6 @@
           "description": "",
           "group": "Sustain",
           "extraInformation": [],
-          "hidden": false,
           "name": "DashSustainDurationMax"
         },
         {
@@ -5884,7 +5859,6 @@
           "description": "",
           "group": "Sustain",
           "extraInformation": [],
-          "hidden": false,
           "name": "DashSustainAcceleration"
         },
         {
@@ -5894,7 +5868,6 @@
           "description": "",
           "group": "Sustain",
           "extraInformation": [],
-          "hidden": false,
           "name": "DashSustainSpeedMax"
         },
         {
@@ -5904,7 +5877,6 @@
           "description": "",
           "group": "Sustain",
           "extraInformation": [],
-          "hidden": false,
           "name": "DashSustainGravity"
         },
         {
@@ -5914,7 +5886,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "DashDecceleration"
         },
         {
@@ -5924,7 +5895,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "DashGravity"
         },
         {
@@ -5934,7 +5904,6 @@
           "description": "",
           "group": "",
           "extraInformation": [],
-          "hidden": false,
           "name": "CoolDownDuration"
         },
         {
@@ -6629,7 +6598,6 @@
           "extraInformation": [
             "PlatformBehavior::PlatformerObjectBehavior"
           ],
-          "hidden": false,
           "name": "PlatformerCharacter"
         }
       ],

@@ -470,6 +470,26 @@
         "b": 255,
         "g": 255,
         "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "End of Demo Loser.",
+        "font": "",
+        "textAlignment": "left",
+        "characterSize": 20,
+        "color": "255;255;255"
       }
     },
     {
@@ -491,6 +511,26 @@
         "b": 255,
         "g": 165,
         "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "READ ME\nSpinning gives you low gravity and high jumps until you touch the ground or wall jump, you can double jump but not if you have low gravity\nControls:\nArrow Controls (Main):\nArrows: Move\nZ: Jump\nX: Dash\nC: Spin\nWASD Controls (Bad):\nWASD: Move\nJ: Spin\nK: Dash\nSpace: Jump\nHave Fun!",
+        "font": "",
+        "textAlignment": "center",
+        "characterSize": 20,
+        "color": "0;165;255"
       }
     }
   ],

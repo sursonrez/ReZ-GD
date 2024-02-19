@@ -1006,6 +1006,26 @@
         "b": 255,
         "g": 255,
         "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Level Name",
+        "font": "",
+        "textAlignment": "left",
+        "characterSize": 50,
+        "color": "255;255;255"
       }
     },
     {
@@ -1027,6 +1047,26 @@
         "b": 133,
         "g": 133,
         "r": 133
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Level Info",
+        "font": "",
+        "textAlignment": "left",
+        "characterSize": 25,
+        "color": "133;133;133"
       }
     },
     {
@@ -1369,6 +1409,26 @@
         "b": 255,
         "g": 255,
         "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Title",
+        "font": "",
+        "textAlignment": "left",
+        "characterSize": 20,
+        "color": "255;255;255"
       }
     },
     {
@@ -1492,6 +1552,26 @@
         "b": 0,
         "g": 0,
         "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Controls (for playtesters/devs)\nCamera: WASD (Shift for speed CTRL for slow)\nClick to Place Current Object\nMove your Cursor to the Left Side of the Screen to Select a new Object\nShift+Right Click an Object to Delete (Gonna Change)\nGRID SIZING:\nShift to do a 1:1 grid size for placement\nCTRL to do 8:8 grid size for placement\nNothing to do 4:4  grid size for placement\nThats it (Click text to Hide, or autohides after 15 seconds)",
+        "font": "",
+        "textAlignment": "right",
+        "characterSize": 20,
+        "color": "0;0;0"
       }
     },
     {
@@ -1518,6 +1598,26 @@
         "b": 0,
         "g": 0,
         "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Saved!/Loaded!",
+        "font": "",
+        "textAlignment": "left",
+        "characterSize": 40,
+        "color": "0;0;0"
       }
     },
     {

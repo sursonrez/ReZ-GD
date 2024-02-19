@@ -66,15 +66,6 @@
     "resources": [
       {
         "alwaysLoaded": false,
-        "file": "assets/NewSprite.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "NewSprite",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
         "file": "assets/NewSprite2.png",
         "kind": "image",
         "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/NewSprite2.png\"}",
@@ -88,15 +79,6 @@
         "kind": "image",
         "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/NewSprite3.png\"}",
         "name": "NewSprite3",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "download.jpg",
-        "kind": "image",
-        "metadata": "",
-        "name": "download.jpg",
         "smoothed": false,
         "userAdded": true
       },
@@ -156,60 +138,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "assets/New image3.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\",\"pskl\":{},\"localFilePath\":\"assets/New image3.png\"}",
-        "name": "New image3",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/NewSprite8.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "NewSprite8",
-        "smoothed": false,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "Untitled (18).png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Untitled (18).png",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "Untitled (19).png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Untitled (19).png",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "Untitled (20).png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Untitled (20).png",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/NewSprite9.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "NewSprite9",
-        "smoothed": false,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
         "file": "assets/New image4.png",
         "kind": "image",
         "metadata": "{\"extension\":\".png\",\"pskl\":{},\"localFilePath\":\"assets/New image4.png\"}",
@@ -223,33 +151,6 @@
         "kind": "image",
         "metadata": "",
         "name": "Untitled (21).png",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/NewSprite10.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "NewSprite10",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/NewSprite11.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "NewSprite11",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/NewSprite12.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/NewSprite12.png\"}",
-        "name": "NewSprite12",
         "smoothed": false,
         "userAdded": true
       },
@@ -288,24 +189,6 @@
         "name": "NewSprite14",
         "smoothed": false,
         "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "Untitled (23).png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Untitled (23).png",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/Untitled (23).png2.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
-        "name": "Untitled (23).png2",
-        "smoothed": false,
-        "userAdded": false
       },
       {
         "alwaysLoaded": false,
@@ -349,15 +232,6 @@
         "kind": "image",
         "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/_player4.png\"}",
         "name": "_player4",
-        "smoothed": false,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/_player5.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/_player5.png\"}",
-        "name": "_player5",
         "smoothed": false,
         "userAdded": false
       },
@@ -421,52 +295,12 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "assets/NewSprite17.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/NewSprite17.png\"}",
-        "name": "NewSprite17",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/NewSprite18.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/NewSprite18.png\"}",
-        "name": "NewSprite18",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/NewSprite19.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/NewSprite19.png\"}",
-        "name": "NewSprite19",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
         "file": "assets/_player10.png",
         "kind": "image",
         "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/_player10.png\"}",
         "name": "_player10",
         "smoothed": false,
         "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/CartoonSmokeBlast.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "CartoonSmokeBlast.png",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/Particles/PixiJS/971c74ddfb7396b4a871d3949e0970d50be470c636b91142362c15a3431ed63c_CartoonSmokeBlast.png",
-          "name": "CartoonSmokeBlast.png"
-        }
       },
       {
         "alwaysLoaded": false,
@@ -483,67 +317,6 @@
         "kind": "image",
         "metadata": "{\"extension\":\".png\"}",
         "name": "NewSprite21",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/Mouse_Left Key.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Mouse_Left Key.png",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/Xelu Free Controller and Key Prompts/Mouse/Dark/8c6b7622a9aca43b32d84a733ca771338367a03443f36c5719fd8189a9256935_Mouse_Left Key.png",
-          "name": "Mouse_Left Key.png"
-        }
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/Mouse_Middle Key.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Mouse_Middle Key.png",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/Xelu Free Controller and Key Prompts/Mouse/Dark/c783f63ddfd4c1d19ad4c020794bf991eb939e1bdc119f999086f2eab3e405d7_Mouse_Middle Key.png",
-          "name": "Mouse_Middle Key.png"
-        }
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/Mouse_Mouse.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Mouse_Mouse.png",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/Xelu Free Controller and Key Prompts/Mouse/Dark/c322ef33ab3d6e42879a8ecaabcf0ad73696d6f40afc7fb1c88273e24aaebdad_Mouse_Mouse.png",
-          "name": "Mouse_Mouse.png"
-        }
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/Mouse_Right Key.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Mouse_Right Key.png",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/Xelu Free Controller and Key Prompts/Mouse/Dark/014df645a5ca04837e0032a0fafaaa481370191b7d04d99b527b1d81f65478c4_Mouse_Right Key.png",
-          "name": "Mouse_Right Key.png"
-        }
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/NewSprite22.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "NewSprite22",
         "smoothed": false,
         "userAdded": true
       },
@@ -670,24 +443,6 @@
         "kind": "image",
         "metadata": "{\"extension\":\".png\"}",
         "name": "foldericon",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/NewSprite29.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/NewSprite29.png\"}",
-        "name": "NewSprite29",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/NewSprite30.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "NewSprite30",
         "smoothed": false,
         "userAdded": true
       },
