@@ -1,5 +1,5 @@
 {
-  "firstLayout": "Untitled scene",
+  "firstLayout": "Menu",
   "gdVersion": {
     "build": 99,
     "major": 4,
@@ -463,6 +463,35 @@
         "name": "NewSprite32",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/NewPanelSprite.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{},\"localFilePath\":\"assets/NewPanelSprite.png\"}",
+        "name": "NewPanelSprite",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "Findle_Apple_and_Pinapple_Main_Theme.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Findle_Apple_and_Pinapple_Main_Theme.mp3",
+        "preloadAsMusic": true,
+        "preloadAsSound": true,
+        "preloadInCache": true,
+        "userAdded": true
+      },
+      {
+        "file": "BeepBox-Song.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "BeepBox-Song.mp3",
+        "preloadAsMusic": true,
+        "preloadAsSound": true,
+        "preloadInCache": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -2276,6 +2305,11 @@
       "name": "DiscordInit",
       "type": "boolean",
       "value": false
+    },
+    {
+      "name": "LoadDest",
+      "type": "string",
+      "value": ""
     }
   ],
   "layouts": [
@@ -2290,6 +2324,14 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/editor"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/menu"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/load"
     }
   ],
   "externalEvents": [
@@ -2312,6 +2354,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalEvents/discord"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/menus"
     }
   ],
   "eventsFunctionsExtensions": [

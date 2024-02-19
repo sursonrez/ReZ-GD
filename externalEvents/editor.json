@@ -1331,7 +1331,7 @@
                 "value": "SourisSurObjet"
               },
               "parameters": [
-                "objectlistitembg",
+                "objectlistitem",
                 "",
                 "",
                 ""
@@ -1484,9 +1484,9 @@
                     "value": "MettreY"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "=",
-                    "objectsList.Y()+(objectlistitembg.position*(objectlistitembg.Height()+5))"
+                    "objectsList.Y() + (objectlistitem.position * (objectlistitem.Height() + 5))"
                   ]
                 },
                 {
@@ -1494,7 +1494,7 @@
                     "value": "MettreX"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "=",
                     "objectsbg.X()+10"
                   ]
@@ -1504,7 +1504,7 @@
                     "value": "ResizableCapability::ResizableBehavior::SetWidth"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "Resizable",
                     "=",
                     "objectsbg.Width()-10"
@@ -1516,7 +1516,7 @@
                   },
                   "parameters": [
                     "",
-                    "objectlistitembg",
+                    "objectlistitem",
                     "objectsList",
                     ""
                   ]
@@ -1651,7 +1651,7 @@
                     "value": "SourisSurObjet"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "",
                     "",
                     ""
@@ -1671,7 +1671,7 @@
                     "value": "ObjectVariableAsBoolean"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "isfolder",
                     ""
                   ]
@@ -1681,7 +1681,7 @@
                     "value": "VarObjetTxt"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "folder",
                     "=",
                     "VariableString(currentfolder)"
@@ -1696,7 +1696,7 @@
                   "parameters": [
                     "selectedobj",
                     "=",
-                    "objectlistitembg.object"
+                    "objectlistitem.object"
                   ]
                 }
               ]
@@ -1709,7 +1709,7 @@
                     "value": "SourisSurObjet"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "",
                     "",
                     ""
@@ -1729,7 +1729,7 @@
                     "value": "ObjectVariableAsBoolean"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "isfolder",
                     "True"
                   ]
@@ -1739,7 +1739,7 @@
                     "value": "VarObjetTxt"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "folder",
                     "=",
                     "VariableString(currentfolder)"
@@ -1754,7 +1754,7 @@
                   "parameters": [
                     "currentfolder",
                     "=",
-                    "objectlistitembg.object"
+                    "objectlistitem.object"
                   ]
                 }
               ]
@@ -1767,7 +1767,7 @@
                     "value": "VarObjetTxt"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "folder",
                     "=",
                     "VariableString(currentfolder)"
@@ -1780,7 +1780,7 @@
                     "value": "Montre"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     ""
                   ]
                 }
@@ -1849,7 +1849,7 @@
                     "value": "VarObjetTxt"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "folder",
                     "=",
                     "VariableString(currentfolder)"
@@ -1862,7 +1862,7 @@
                     "value": "Cache"
                   },
                   "parameters": [
-                    "objectlistitembg"
+                    "objectlistitem"
                   ]
                 }
               ]
@@ -2020,7 +2020,7 @@
                     "value": "SourisSurObjet"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "",
                     "",
                     ""
@@ -2043,7 +2043,7 @@
                     "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "Tween",
                     "\"opacity\"",
                     "225",
@@ -2062,7 +2062,7 @@
                     "value": "SourisSurObjet"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "",
                     "",
                     ""
@@ -2084,7 +2084,7 @@
                     "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "Tween",
                     "\"opacity\"",
                     "200",
@@ -2104,7 +2104,7 @@
                     "value": "SourisSurObjet"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "",
                     "",
                     ""
@@ -2117,7 +2117,7 @@
                     "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "Tween",
                     "\"opacity\"",
                     "172.5",
@@ -2130,7 +2130,7 @@
             },
             {
               "type": "BuiltinCommonInstructions::ForEach",
-              "object": "objectlistitembg",
+              "object": "objectlistitem",
               "conditions": [
                 {
                   "type": {
@@ -2147,8 +2147,8 @@
                   "parameters": [
                     "",
                     "objectlistitemtitle",
-                    "objectlistitembg.X()+5",
-                    "objectlistitembg.CenterY()-(objectlistitemtitle.Height()/2)",
+                    "objectlistitem.X() + 5",
+                    "objectlistitem.CenterY() - (objectlistitemtitle.Height() / 2)",
                     "\"ObjListItems\""
                   ]
                 },
@@ -2171,7 +2171,7 @@
                     "objectlistitemtitle",
                     "Text",
                     "=",
-                    "objectlistitembg.title"
+                    "objectlistitem.title"
                   ]
                 },
                 {
@@ -2181,7 +2181,7 @@
                   "parameters": [
                     "objectlistitemtitle",
                     "=",
-                    "objectlistitembg.CenterY()"
+                    "objectlistitem.CenterY()"
                   ]
                 },
                 {
@@ -2192,21 +2192,21 @@
                     "objectlistitemtitle",
                     "folder",
                     "=",
-                    "objectlistitembg.folder"
+                    "objectlistitem.folder"
                   ]
                 }
               ]
             },
             {
               "type": "BuiltinCommonInstructions::ForEach",
-              "object": "objectlistitembg",
+              "object": "objectlistitem",
               "conditions": [
                 {
                   "type": {
                     "value": "ObjectVariableAsBoolean"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "isfolder",
                     "True"
                   ]
@@ -2226,8 +2226,8 @@
                   "parameters": [
                     "",
                     "foldericon",
-                    "(objectlistitembg.X()+objectlistitembg.Width())-32",
-                    "objectlistitembg.CenterY()-(objectlistitemtitle.Height()/2)",
+                    "(objectlistitem.X() + objectlistitem.Width()) - 32",
+                    "objectlistitem.CenterY() - (objectlistitemtitle.Height() / 2)",
                     "\"ObjListItems\""
                   ]
                 },
@@ -2239,7 +2239,7 @@
                     "foldericon",
                     "folder",
                     "=",
-                    "objectlistitembg.folder"
+                    "objectlistitem.folder"
                   ]
                 },
                 {
@@ -2249,7 +2249,7 @@
                   "parameters": [
                     "foldericon",
                     "=",
-                    "objectlistitembg.CenterY()"
+                    "objectlistitem.CenterY()"
                   ]
                 }
               ]
@@ -2294,7 +2294,7 @@
                   "parameters": [
                     "objectlistitemtitle",
                     "=",
-                    "objectlistitembg.X()+15"
+                    "objectlistitem.X() + 15"
                   ]
                 },
                 {
@@ -2304,7 +2304,7 @@
                   "parameters": [
                     "foldericon",
                     "=",
-                    "(objectlistitembg.X()+objectlistitembg.Width())-36"
+                    "(objectlistitem.X() + objectlistitem.Width()) - 36"
                   ]
                 }
               ]
@@ -2390,7 +2390,7 @@
                     "value": "SourisSurObjet"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "",
                     "",
                     ""
@@ -2401,14 +2401,14 @@
             },
             {
               "type": "BuiltinCommonInstructions::ForEach",
-              "object": "objectlistitembg",
+              "object": "objectlistitem",
               "conditions": [
                 {
                   "type": {
                     "value": "VarObjetTxt"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "folder",
                     "=",
                     "VariableString(currentfolder)"
@@ -2419,7 +2419,7 @@
                     "value": "ObjectVariableAsBoolean"
                   },
                   "parameters": [
-                    "objectlistitembg",
+                    "objectlistitem",
                     "isfolder",
                     ""
                   ]
@@ -2439,9 +2439,9 @@
                   "parameters": [
                     "",
                     "Object",
-                    "objectlistitembg.object",
-                    "objectlistitembg.BoundingBoxRight()-38",
-                    "objectlistitembg.Y()",
+                    "objectlistitem.object",
+                    "objectlistitem.BoundingBoxRight() - 38",
+                    "objectlistitem.Y()",
                     "\"ObjListItems\""
                   ]
                 },
@@ -2484,7 +2484,7 @@
                   "parameters": [
                     "Object",
                     "=",
-                    "objectlistitembg.CenterY()"
+                    "objectlistitem.CenterY()"
                   ]
                 },
                 {
@@ -2495,7 +2495,7 @@
                     "Object",
                     "folderinui",
                     "=",
-                    "objectlistitembg.folder"
+                    "objectlistitem.folder"
                   ]
                 }
               ]
@@ -2522,7 +2522,7 @@
                   "parameters": [
                     "Object",
                     "=",
-                    "objectlistitembg.BoundingBoxRight()-38"
+                    "objectlistitem.BoundingBoxRight() - 38"
                   ]
                 }
               ]
@@ -2984,7 +2984,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Playtest",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3101,6 +3100,15 @@
                     "Save_LoadArray",
                     "Object.ZOrder()"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.Variable(id)"
+                  ]
                 }
               ]
             }
@@ -3215,12 +3223,22 @@
                 "fromPT",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "lastid",
+                "=",
+                "0"
+              ]
             }
           ],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Repeat",
-              "repeatExpression": "VariableChildCount(Save_LoadArray)/7",
+              "repeatExpression": "VariableChildCount(Save_LoadArray)/8",
               "conditions": [],
               "actions": [
                 {
@@ -3280,12 +3298,33 @@
                 },
                 {
                   "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "id",
+                    "=",
+                    "Save_LoadArray[LoadClimb+7]"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "ModVarScene"
                   },
                   "parameters": [
                     "LoadClimb",
                     "+",
-                    "7"
+                    "8"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "lastid",
+                    "+",
+                    "1"
                   ]
                 }
               ]
@@ -3477,6 +3516,16 @@
                 "\"Level \"+VariableString(LevelInfo.Name)",
                 "ToJSON(Save_LoadArray)"
               ]
+            },
+            {
+              "type": {
+                "value": "FileSystem::SaveStringToFileSync"
+              },
+              "parameters": [
+                "ToJSON(Save_LoadArray)",
+                "FileSystem::DocumentsPath()+\"/ReZLevels/\"+VariableString(LevelInfo.Name)",
+                ""
+              ]
             }
           ]
         },
@@ -3539,6 +3588,178 @@
               "parameters": [
                 "fromPT",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                ".02"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Repeat",
+              "repeatExpression": "VariableChildCount(Save_LoadArray)/7",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "CreateByName"
+                  },
+                  "parameters": [
+                    "",
+                    "Object",
+                    "Save_LoadArray[LoadClimb]",
+                    "Save_LoadArray[LoadClimb+1]",
+                    "Save_LoadArray[LoadClimb+2]",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Resizable",
+                    "=",
+                    "Save_LoadArray[LoadClimb+3]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "Object",
+                    "=",
+                    "Save_LoadArray[LoadClimb+4]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Resizable",
+                    "=",
+                    "Save_LoadArray[LoadClimb+5]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Object",
+                    "=",
+                    "Save_LoadArray[LoadClimb+6]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "LoadClimb",
+                    "+",
+                    "7"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyReleased"
+              },
+              "parameters": [
+                "",
+                "x"
+              ]
+            },
+            {
+              "type": {
+                "value": "Layer"
+              },
+              "parameters": [
+                "Object",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Object",
+                "ghost",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Object",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyReleased"
+              },
+              "parameters": [
+                "",
+                "c"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "await": true,
+                "value": "FileSystem::LoadStringFromFileAsync"
+              },
+              "parameters": [
+                "Save_LoadArray",
+                "FileSystem::DocumentsPath()+\"/ReZLevels\"",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "LoadClimb",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "VariableClearChildren"
+              },
+              "parameters": [
+                "Save_LoadArray"
               ]
             }
           ],

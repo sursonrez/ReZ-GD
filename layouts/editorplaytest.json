@@ -137,7 +137,7 @@
           "events": [
             {
               "type": "BuiltinCommonInstructions::Repeat",
-              "repeatExpression": "VariableChildCount(Save_LoadArray)/7",
+              "repeatExpression": "VariableChildCount(Save_LoadArray)/8",
               "conditions": [],
               "actions": [
                 {
@@ -197,12 +197,23 @@
                 },
                 {
                   "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "id",
+                    "=",
+                    "Save_LoadArray[LoadClimb+7]"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "ModVarScene"
                   },
                   "parameters": [
                     "LoadClimb",
                     "+",
-                    "7"
+                    "8"
                   ]
                 }
               ]
