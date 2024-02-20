@@ -97,35 +97,6 @@
           "value": "Level Editor"
         }
       ]
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 67,
-      "layer": "",
-      "name": "buttonout",
-      "persistentUuid": "fb51d5a7-b0bc-4c9d-ba83-f841bca64054",
-      "width": 176,
-      "x": 30,
-      "y": 410,
-      "zOrder": 2,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "folded": true,
-          "name": "id",
-          "type": "number",
-          "value": 3
-        },
-        {
-          "folded": true,
-          "name": "text",
-          "type": "string",
-          "value": "Quit"
-        }
-      ]
     }
   ],
   "objects": [
