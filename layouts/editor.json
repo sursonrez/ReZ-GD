@@ -885,6 +885,46 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 64,
+      "layer": "ObjListItems",
+      "name": "objectlistitem",
+      "persistentUuid": "739fc585-0ebd-479a-a6bd-cdf5c26baa40",
+      "width": 64,
+      "x": 256,
+      "y": 944,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": "hazards"
+        },
+        {
+          "folded": true,
+          "name": "position",
+          "type": "number",
+          "value": 2
+        },
+        {
+          "folded": true,
+          "name": "object",
+          "type": "string",
+          "value": "enemy"
+        },
+        {
+          "folded": true,
+          "name": "title",
+          "type": "string",
+          "value": "Basic Enemy"
+        }
+      ]
     }
   ],
   "objects": [
@@ -2102,6 +2142,16 @@
             "controls_for_devs_and_playtest",
             "=",
             "SceneWindowWidth()-(controls_for_devs_and_playtest.Width()+5)"
+          ]
+        },
+        {
+          "type": {
+            "value": "ActivateBehavior"
+          },
+          "parameters": [
+            "enemy",
+            "PlatformerObject",
+            ""
           ]
         }
       ]

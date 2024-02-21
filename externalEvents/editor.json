@@ -1191,8 +1191,55 @@
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
+          "conditions": [
+            {
+              "type": {
+                "value": "VarScene"
+              },
+              "parameters": [
+                "objsel",
+                "=",
+                "-1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Draggables"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "objsel",
+                "=",
+                "-1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "Draggables",
+                ""
+              ]
+            }
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1255,6 +1302,36 @@
               "parameters": [
                 "Object",
                 ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "id",
+                    "=",
+                    "Variable(objsel)"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "objsel",
+                    "=",
+                    "-1"
+                  ]
+                }
               ]
             }
           ]
@@ -2648,6 +2725,51 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "LShift"
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "LControl"
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Right"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "objsel",
+                "=",
+                "-1"
+              ]
+            }
+          ]
+        },
+        {
           "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
@@ -3480,6 +3602,15 @@
                     "Save_LoadArray",
                     "Object.ZOrder()"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.Variable(id)"
+                  ]
                 }
               ]
             }
@@ -3602,7 +3733,7 @@
           "events": [
             {
               "type": "BuiltinCommonInstructions::Repeat",
-              "repeatExpression": "VariableChildCount(Save_LoadArray)/7",
+              "repeatExpression": "VariableChildCount(Save_LoadArray)/8",
               "conditions": [],
               "actions": [
                 {
@@ -3662,12 +3793,23 @@
                 },
                 {
                   "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "id",
+                    "=",
+                    "Save_LoadArray[LoadClimb+7]"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "ModVarScene"
                   },
                   "parameters": [
                     "LoadClimb",
                     "+",
-                    "7"
+                    "8"
                   ]
                 }
               ]

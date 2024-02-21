@@ -8,6 +8,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Dash (GD Refrence??!?!?)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -144,6 +145,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Controls",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -428,6 +430,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Flip",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -516,6 +519,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Aura",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -680,6 +684,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Spinning",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1323,6 +1328,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Jump Orb",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1426,7 +1432,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "name": "Spike",
+      "name": "Death",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
@@ -1457,6 +1463,57 @@
                 "player_spawnpoint.CenterX()",
                 "=",
                 "player_spawnpoint.CenterY()"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "CurrentSceneName()",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "_player",
+                "enemy",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetCenter"
+              },
+              "parameters": [
+                "_player",
+                "=",
+                "player_spawnpoint.CenterX()",
+                "=",
+                "player_spawnpoint.CenterY()"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "CurrentSceneName()",
+                ""
               ]
             }
           ]

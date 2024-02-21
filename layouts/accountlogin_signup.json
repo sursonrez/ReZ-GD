@@ -1,8 +1,8 @@
 {
   "b": 0,
   "disableInputWhenNotFocused": true,
-  "mangledName": "Menu",
-  "name": "Menu",
+  "mangledName": "AccountLogin_95Signup",
+  "name": "AccountLogin_Signup",
   "r": 0,
   "standardSortMethod": true,
   "stopSoundsOnStartup": true,
@@ -18,30 +18,152 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.546875,
+    "zoomFactor": 0.7876290101673753,
     "windowMask": false
   },
   "objectsGroups": [],
   "variables": [
     {
       "folded": true,
+      "name": "error",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "folded": true,
       "name": "currentbutton",
       "type": "number",
       "value": 0
+    },
+    {
+      "folded": true,
+      "name": "username",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "folded": true,
+      "name": "password",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "name": "signup",
+      "type": "array",
+      "children": [
+        {
+          "folded": true,
+          "type": "string",
+          "value": "0"
+        },
+        {
+          "folded": true,
+          "type": "string",
+          "value": "0"
+        }
+      ]
     }
   ],
   "instances": [
     {
       "angle": 0,
-      "customSize": false,
-      "height": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 63,
       "layer": "",
-      "name": "outline",
-      "persistentUuid": "f7ff931e-e3ce-47e3-a385-593ec5e27f6f",
-      "width": 0,
-      "x": 0,
-      "y": 0,
+      "name": "buttonout",
+      "persistentUuid": "01453f92-e45f-4535-9434-84d04ec04eb7",
+      "width": 171,
+      "x": 30,
+      "y": 30,
       "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 10001
+        },
+        {
+          "folded": true,
+          "name": "text",
+          "type": "string",
+          "value": "Back"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 63,
+      "layer": "NotSignedIn",
+      "name": "buttonout",
+      "persistentUuid": "160dd192-a5d7-4999-9ccf-4e76ad22585b",
+      "width": 198,
+      "x": 30,
+      "y": 195,
+      "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 10002
+        },
+        {
+          "folded": true,
+          "name": "text",
+          "type": "string",
+          "value": "Sign up"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 63,
+      "layer": "NotSignedIn",
+      "name": "buttonout",
+      "persistentUuid": "1d06a1ef-46c6-44eb-aa16-6e92bd29e146",
+      "width": 198,
+      "x": 238,
+      "y": 195,
+      "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 10003
+        },
+        {
+          "folded": true,
+          "name": "text",
+          "type": "string",
+          "value": "Log in"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 30,
+      "layer": "NotSignedIn",
+      "name": "email",
+      "persistentUuid": "82f12536-d418-4946-ab8d-3ab628d7113e",
+      "width": 405,
+      "x": 30,
+      "y": 115,
+      "zOrder": 2,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -49,108 +171,76 @@
     {
       "angle": 0,
       "customSize": true,
-      "depth": 1,
-      "height": 67,
-      "layer": "",
-      "name": "buttonout",
-      "persistentUuid": "7c4bb159-e3ae-4fcd-858e-50d3626fe4e5",
-      "width": 176,
+      "depth": 0,
+      "height": 30,
+      "layer": "NotSignedIn",
+      "name": "password",
+      "persistentUuid": "0f55f3a2-e7f6-416d-9fcf-a4fa1e28aedd",
+      "width": 405,
       "x": 30,
-      "y": 170,
-      "zOrder": 2,
+      "y": 158,
+      "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
-      "initialVariables": [
-        {
-          "folded": true,
-          "name": "text",
-          "type": "string",
-          "value": "Play"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 67,
-      "layer": "",
-      "name": "buttonout",
-      "persistentUuid": "e6f0513b-fd32-41f4-b94c-f854c622eeee",
-      "width": 176,
-      "x": 30,
-      "y": 250,
-      "zOrder": 2,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "folded": true,
-          "name": "id",
-          "type": "number",
-          "value": 1
-        },
-        {
-          "folded": true,
-          "name": "text",
-          "type": "string",
-          "value": "Level Editor"
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 67,
-      "layer": "",
-      "name": "buttonout",
-      "persistentUuid": "8102166a-2afa-4c88-a2d5-853c6c22bbdf",
-      "width": 423,
-      "x": 30,
-      "y": 635,
-      "zOrder": 2,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "folded": true,
-          "name": "id",
-          "type": "number",
-          "value": 500
-        },
-        {
-          "folded": true,
-          "name": "text",
-          "type": "string",
-          "value": "Logged in as: "
-        }
-      ]
+      "initialVariables": []
     }
   ],
   "objects": [
     {
       "assetStoreId": "",
-      "bottomMargin": 3,
-      "height": 32,
-      "leftMargin": 3,
-      "name": "outline",
-      "rightMargin": 3,
-      "texture": "NewPanelSprite",
-      "tiled": false,
-      "topMargin": 3,
-      "type": "PanelSpriteObject::PanelSprite",
-      "width": 32,
+      "name": "email",
+      "type": "TextInput::TextInputObject",
       "variables": [],
       "effects": [],
-      "behaviors": []
+      "behaviors": [],
+      "content": {
+        "initialValue": "",
+        "placeholder": "Email",
+        "fontResourceName": "",
+        "fontSize": 20,
+        "inputType": "text",
+        "textColor": "255;255;255",
+        "fillColor": "0;0;0",
+        "fillOpacity": 255,
+        "borderColor": "255;255;255",
+        "borderOpacity": 255,
+        "borderWidth": 2,
+        "readOnly": false,
+        "disabled": false
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "password",
+      "type": "TextInput::TextInputObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "initialValue": "",
+        "placeholder": "Password",
+        "fontResourceName": "",
+        "fontSize": 20,
+        "inputType": "text",
+        "textColor": "255;255;255",
+        "fillColor": "0;0;0",
+        "fillOpacity": 255,
+        "borderColor": "255;255;255",
+        "borderOpacity": 255,
+        "borderWidth": 2,
+        "readOnly": false,
+        "disabled": false
+      }
     }
   ],
   "objectsFolderStructure": {
     "folderName": "__ROOT",
     "children": [
       {
-        "objectName": "outline"
+        "objectName": "email"
+      },
+      {
+        "objectName": "password"
       }
     ]
   },
@@ -170,10 +260,10 @@
             "value": "VarObjet"
           },
           "parameters": [
-            "buttontext",
+            "buttonout",
             "id",
             "=",
-            "500"
+            "10001"
           ]
         },
         {
@@ -269,7 +359,7 @@
           },
           "parameters": [
             "",
-            "\"AccountLogin_Signup\"",
+            "\"Menu\"",
             ""
           ]
         }
@@ -283,55 +373,115 @@
             "value": "VarObjet"
           },
           "parameters": [
-            "buttontext",
-            "id",
-            "=",
-            "500"
-          ]
-        },
-        {
-          "type": {
-            "value": "GlobalVariableAsBoolean"
-          },
-          "parameters": [
-            "AccInfo.LoggedIn",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "VarObjet"
-          },
-          "parameters": [
             "buttonout",
             "id",
             "=",
-            "500"
+            "10002"
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Or"
+          },
+          "parameters": [],
+          "subInstructions": [
+            {
+              "type": {
+                "value": "KeyReleased"
+              },
+              "parameters": [
+                "",
+                "Return"
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyReleased"
+              },
+              "parameters": [
+                "",
+                "NumpadReturn"
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyReleased"
+              },
+              "parameters": [
+                "",
+                "Space"
+              ]
+            },
+            {
+              "type": {
+                "value": "Gamepads::C_Button_released"
+              },
+              "parameters": [
+                "",
+                "1",
+                "\"A\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Gamepads::C_Button_released"
+              },
+              "parameters": [
+                "",
+                "1",
+                "\"Cross\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::And"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "buttonout",
+                    "=",
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            }
           ]
         }
       ],
       "actions": [
         {
           "type": {
-            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+            "value": "Firebase::CreateBasicAccount"
           },
           "parameters": [
-            "buttontext",
-            "Text",
-            "=",
-            "\"Not Logged in (Click to Login/Up)\""
+            "email.Text()",
+            "password.Text()",
+            ""
           ]
         },
         {
           "type": {
-            "value": "SetCenter"
+            "value": "Wait"
           },
           "parameters": [
-            "buttontext",
-            "=",
-            "buttonout.CenterX()",
-            "=",
-            "buttonout.CenterY()"
+            ".1"
           ]
         }
       ]
@@ -341,61 +491,12 @@
       "conditions": [
         {
           "type": {
-            "value": "VarObjet"
+            "value": "Firebase::IsSignedIn"
           },
-          "parameters": [
-            "buttontext",
-            "id",
-            "=",
-            "500"
-          ]
-        },
-        {
-          "type": {
-            "value": "GlobalVariableAsBoolean"
-          },
-          "parameters": [
-            "AccInfo.LoggedIn",
-            "True"
-          ]
-        },
-        {
-          "type": {
-            "value": "VarObjet"
-          },
-          "parameters": [
-            "buttonout",
-            "id",
-            "=",
-            "500"
-          ]
+          "parameters": []
         }
       ],
-      "actions": [
-        {
-          "type": {
-            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-          },
-          "parameters": [
-            "buttontext",
-            "Text",
-            "=",
-            "\"Logged in as \"+GlobalVariableString(AccInfo.Username)"
-          ]
-        },
-        {
-          "type": {
-            "value": "SetCenter"
-          },
-          "parameters": [
-            "buttontext",
-            "=",
-            "buttonout.CenterX()",
-            "=",
-            "buttonout.CenterY()"
-          ]
-        }
-      ]
+      "actions": []
     }
   ],
   "layers": [
@@ -425,6 +526,72 @@
           "width": 0
         }
       ],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Light",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "groundColor": "64;64;64",
+            "skyColor": "255;255;255",
+            "top": "Y-"
+          },
+          "booleanParameters": {}
+        }
+      ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "NotSignedIn",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Light",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "groundColor": "64;64;64",
+            "skyColor": "255;255;255",
+            "top": "Y-"
+          },
+          "booleanParameters": {}
+        }
+      ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "SignedIn",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
       "effects": [
         {
           "effectType": "Scene3D::HemisphereLight",

@@ -162,6 +162,18 @@
                     "buttontext",
                     "\"0;0;0\""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenter"
+                  },
+                  "parameters": [
+                    "buttontext",
+                    "=",
+                    "buttonout.CenterX()",
+                    "=",
+                    "buttonout.CenterY()"
+                  ]
                 }
               ]
             }
@@ -203,46 +215,23 @@
                 "value": "VarObjet"
               },
               "parameters": [
-                "buttontext",
+                "buttonout",
                 "id",
                 "=",
                 "Variable(currentbutton)"
-              ]
-            },
-            {
-              "type": {
-                "value": "CollisionNP"
-              },
-              "parameters": [
-                "buttontext",
-                "buttonout",
-                "",
-                "",
-                ""
               ]
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "TextObject::Text::SetOutlineThickness"
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
               },
               "parameters": [
-                "buttontext",
+                "buttonout",
+                "Opacity",
                 "=",
-                "3"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetCenter"
-              },
-              "parameters": [
-                "buttontext",
-                "=",
-                "buttonout.CenterX()",
-                "=",
-                "buttonout.CenterY()"
+                "255"
               ]
             }
           ]
@@ -256,46 +245,23 @@
                 "value": "VarObjet"
               },
               "parameters": [
-                "buttontext",
+                "buttonout",
                 "id",
                 "=",
                 "Variable(currentbutton)"
-              ]
-            },
-            {
-              "type": {
-                "value": "CollisionNP"
-              },
-              "parameters": [
-                "buttontext",
-                "buttonout",
-                "",
-                "",
-                ""
               ]
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "TextObject::Text::SetOutlineThickness"
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
               },
               "parameters": [
-                "buttontext",
+                "buttonout",
+                "Opacity",
                 "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetCenter"
-              },
-              "parameters": [
-                "buttontext",
-                "=",
-                "buttonout.CenterX()",
-                "=",
-                "buttonout.CenterY()"
+                "172.5"
               ]
             }
           ]
@@ -349,15 +315,6 @@
                 },
                 {
                   "type": {
-                    "value": "MouseButtonReleased"
-                  },
-                  "parameters": [
-                    "",
-                    "Left"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "Gamepads::C_Button_released"
                   },
                   "parameters": [
@@ -376,6 +333,34 @@
                     "1",
                     "\"Cross\"",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "buttonout",
+                        "=",
+                        "",
+                        ""
+                      ]
+                    }
                   ]
                 }
               ]
@@ -453,15 +438,6 @@
                 },
                 {
                   "type": {
-                    "value": "MouseButtonReleased"
-                  },
-                  "parameters": [
-                    "",
-                    "Left"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "Gamepads::C_Button_released"
                   },
                   "parameters": [
@@ -480,6 +456,34 @@
                     "1",
                     "\"Cross\"",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "buttonout",
+                        "=",
+                        "",
+                        ""
+                      ]
+                    }
                   ]
                 }
               ]

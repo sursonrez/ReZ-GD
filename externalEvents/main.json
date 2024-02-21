@@ -148,6 +148,13 @@
         "includeConfig": 0
       },
       "target": "Player"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "Enemys"
     }
   ]
 }

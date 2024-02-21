@@ -54,7 +54,13 @@
     "authorUsernames": [],
     "categories": [],
     "playableDevices": [],
-    "extensionProperties": [],
+    "extensionProperties": [
+      {
+        "extension": "Firebase",
+        "property": "FirebaseConfig",
+        "value": "{\n    \"apiKey\": \"AIzaSyCo3DFvHEsTBfG999g69IR2hgdj_4Ugt3s\",\n    \"authDomain\": \"rezgdserver.firebaseapp.com\",\n    \"projectId\": \"rezgdserver\",\n    \"storageBucket\": \"rezgdserver.appspot.com\",\n    \"messagingSenderId\": \"370156556451\",\n    \"appId\": \"1:370156556451:web:6113da5ae7303c44abaf16\",\n    \"measurementId\": \"G-N9048Y9FS1\"\n  }"
+      }
+    ],
     "platforms": [
       {
         "name": "GDevelop JS platform"
@@ -491,6 +497,24 @@
         "preloadAsMusic": true,
         "preloadAsSound": true,
         "preloadInCache": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/NewSprite33.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/NewSprite33.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite8",
+        "smoothed": false,
         "userAdded": true
       }
     ],
@@ -2068,6 +2092,219 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "enemy",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "mover",
+          "type": "boolean",
+          "value": true
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "PlatformerObject",
+          "type": "PlatformBehavior::PlatformerObjectBehavior",
+          "acceleration": 9999999,
+          "canGoDownFromJumpthru": true,
+          "canGrabPlatforms": false,
+          "canGrabWithoutMoving": true,
+          "deceleration": 99999999,
+          "gravity": 1000,
+          "ignoreDefaultControls": true,
+          "jumpSpeed": 600,
+          "jumpSustainTime": 0.2,
+          "ladderClimbingSpeed": 150,
+          "maxFallingSpeed": 700,
+          "maxSpeed": 250,
+          "slopeMaxAngle": 60,
+          "useLegacyTrajectory": false,
+          "xGrabTolerance": 10,
+          "yGrabOffset": 0
+        }
+      ],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite",
+                  "points": [
+                    {
+                      "name": "WALL",
+                      "x": 32.5,
+                      "y": 28.5
+                    }
+                  ],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 15
+                      },
+                      {
+                        "x": 32,
+                        "y": 15
+                      },
+                      {
+                        "x": 32,
+                        "y": 32
+                      },
+                      {
+                        "x": 0,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite8",
+                  "points": [
+                    {
+                      "name": "WALL",
+                      "x": 32.5,
+                      "y": 28.5
+                    }
+                  ],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 15
+                      },
+                      {
+                        "x": 32,
+                        "y": 15
+                      },
+                      {
+                        "x": 32,
+                        "y": 32
+                      },
+                      {
+                        "x": 0,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bottomMargin": 3,
+      "height": 32,
+      "leftMargin": 3,
+      "name": "buttonout",
+      "rightMargin": 3,
+      "texture": "NewPanelSprite",
+      "tiled": false,
+      "topMargin": 3,
+      "type": "PanelSpriteObject::PanelSprite",
+      "width": 32,
+      "variables": [
+        {
+          "folded": true,
+          "name": "text",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "buttontext",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [
+        {
+          "name": "id",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "string": "Text",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Text",
+        "font": "",
+        "textAlignment": "left",
+        "characterSize": 20,
+        "color": "255;255;255"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -2099,6 +2336,15 @@
       },
       {
         "objectName": "spike_fatal"
+      },
+      {
+        "objectName": "enemy"
+      },
+      {
+        "objectName": "buttonout"
+      },
+      {
+        "objectName": "buttontext"
       }
     ]
   },
@@ -2117,6 +2363,9 @@
         },
         {
           "name": "spike_fatal"
+        },
+        {
+          "name": "enemy"
         }
       ]
     },
@@ -2310,6 +2559,30 @@
       "name": "LoadDest",
       "type": "string",
       "value": ""
+    },
+    {
+      "name": "AccInfo",
+      "type": "structure",
+      "children": [
+        {
+          "folded": true,
+          "name": "LoggedIn",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "folded": true,
+          "name": "Password",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "folded": true,
+          "name": "Username",
+          "type": "string",
+          "value": ""
+        }
+      ]
     }
   ],
   "layouts": [
@@ -2332,6 +2605,14 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/load"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/editorlevels"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/accountlogin_signup"
     }
   ],
   "externalEvents": [
@@ -2358,6 +2639,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalEvents/menus"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/enemys"
     }
   ],
   "eventsFunctionsExtensions": [
