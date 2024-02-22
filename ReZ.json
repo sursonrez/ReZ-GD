@@ -155,7 +155,7 @@
         "alwaysLoaded": false,
         "file": "Untitled (21).png",
         "kind": "image",
-        "metadata": "",
+        "metadata": "{\"localFilePath\":\"Untitled (21).png\",\"extension\":\".png\"}",
         "name": "Untitled (21).png",
         "smoothed": false,
         "userAdded": true
@@ -514,6 +514,33 @@
         "kind": "image",
         "metadata": "{\"extension\":\".png\"}",
         "name": "NewSprite8",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/NewSprite34.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite9",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/foldericon2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "foldericon2",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/foldericon3.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "foldericon3",
         "smoothed": false,
         "userAdded": true
       }

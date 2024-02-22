@@ -429,6 +429,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Placement",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1344,151 +1345,46 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
+      "name": "Inspect Panel",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+              },
+              "parameters": [
+                "inspectorbg",
+                "Tween",
+                "\"x2\"",
+                "SceneWindowWidth()-inspectorbg.Width()",
+                "\"easeOutCubic\"",
+                ".3",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
       "name": "Object Panel",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "Space"
-              ]
-            },
-            {
-              "type": {
-                "value": "MouseButtonPressed"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
-              },
-              "parameters": [
-                "objectsbg",
-                "Tween",
-                "\"x2\"",
-                "-310",
-                "\"easeOutCubic\"",
-                "1",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": true,
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "objectsbg",
-                "",
-                "",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "inverted": true,
-                "value": "SourisSurObjet"
-              },
-              "parameters": [
-                "objectlistitem",
-                "",
-                "",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "inverted": true,
-                "value": "CursorX"
-              },
-              "parameters": [
-                "",
-                "<=",
-                "100",
-                "\"UI\"",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
-              },
-              "parameters": [
-                "objectsbg",
-                "Tween",
-                "\"x2\"",
-                "-310",
-                "\"easeOutCubic\"",
-                "1",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Or"
-              },
-              "parameters": [],
-              "subInstructions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "KeyPressed"
-                  },
-                  "parameters": [
-                    "",
-                    "Space"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": {
-                "value": "CursorX"
-              },
-              "parameters": [
-                "",
-                "<=",
-                "100",
-                "\"UI\"",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "inverted": true,
-                "value": "MouseButtonPressed"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ]
-            }
-          ],
+          "conditions": [],
           "actions": [
             {
               "type": {
@@ -1538,7 +1434,7 @@
               "parameters": [
                 "objectsList",
                 "=",
-                "objectsbg.X()+10"
+                "objectsbg.X()+5"
               ]
             }
           ]
@@ -1608,7 +1504,25 @@
                     "objectsList",
                     ""
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "objectsbg",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
                 {
                   "type": {
                     "value": "SetCameraCenterY"
@@ -2042,6 +1956,76 @@
                     "Object",
                     "ghost",
                     "True"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "objectlistitem",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PickNearest"
+                  },
+                  "parameters": [
+                    "foldericon",
+                    "objectlistitem.BoundingBoxRight()",
+                    "objectlistitem.CenterY()",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetIndex"
+                  },
+                  "parameters": [
+                    "foldericon",
+                    "Animation",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "objectlistitem",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetIndex"
+                  },
+                  "parameters": [
+                    "foldericon",
+                    "Animation",
+                    "=",
+                    "2"
                   ]
                 }
               ]

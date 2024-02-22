@@ -172,7 +172,7 @@
             "loadtext",
             "Text",
             "=",
-            "\"Loading... \"+ToString(round(SceneLoadingProgress(GlobalVariableString(LoadDest))))"
+            "\"Loading... \"+ToString(round(SceneLoadingProgress(GlobalVariableString(LoadDest))*100))"
           ]
         }
       ]

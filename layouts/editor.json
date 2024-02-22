@@ -925,6 +925,22 @@
           "value": "Basic Enemy"
         }
       ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 720,
+      "layer": "UI",
+      "name": "inspectorbg",
+      "persistentUuid": "624e7196-5750-4469-8d06-35430c63fb53",
+      "width": 295,
+      "x": 1328,
+      "y": 0,
+      "zOrder": 14,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
@@ -1125,11 +1141,12 @@
       ],
       "animations": [
         {
-          "name": "",
+          "name": "Untitled (21)",
           "useMultipleDirections": false,
           "directions": [
             {
               "looping": false,
+              "metadata": "{\"pskl\":{}}",
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
@@ -1154,11 +1171,11 @@
                         "y": 0
                       },
                       {
-                        "x": 320,
+                        "x": 500,
                         "y": 0
                       },
                       {
-                        "x": 320,
+                        "x": 500,
                         "y": 500
                       },
                       {
@@ -1806,7 +1823,7 @@
             {
               "looping": false,
               "metadata": "{\"pskl\":{}}",
-              "timeBetweenFrames": 0.08,
+              "timeBetweenFrames": 0.25,
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
@@ -1826,7 +1843,7 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 5,
+                        "x": 7,
                         "y": 8
                       },
                       {
@@ -1838,7 +1855,43 @@
                         "y": 24
                       },
                       {
-                        "x": 5,
+                        "x": 7,
+                        "y": 24
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite9",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 7,
+                        "y": 8
+                      },
+                      {
+                        "x": 27,
+                        "y": 8
+                      },
+                      {
+                        "x": 27,
+                        "y": 24
+                      },
+                      {
+                        "x": 7,
                         "y": 24
                       }
                     ]
@@ -1875,7 +1928,7 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 5,
+                        "x": 7,
                         "y": 8
                       },
                       {
@@ -1887,7 +1940,92 @@
                         "y": 24
                       },
                       {
-                        "x": 5,
+                        "x": 7,
+                        "y": 24
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.25,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "foldericon2",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 7,
+                        "y": 8
+                      },
+                      {
+                        "x": 27,
+                        "y": 8
+                      },
+                      {
+                        "x": 27,
+                        "y": 24
+                      },
+                      {
+                        "x": 7,
+                        "y": 24
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "foldericon3",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 7,
+                        "y": 8
+                      },
+                      {
+                        "x": 27,
+                        "y": 8
+                      },
+                      {
+                        "x": 27,
+                        "y": 24
+                      },
+                      {
+                        "x": 7,
                         "y": 24
                       }
                     ]
@@ -2032,6 +2170,72 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "inspectorbg",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "Untitled (21)",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Untitled (21).png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 500,
+                        "y": 0
+                      },
+                      {
+                        "x": 500,
+                        "y": 500
+                      },
+                      {
+                        "x": 0,
+                        "y": 500
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -2057,6 +2261,9 @@
       },
       {
         "objectName": "objectsbg"
+      },
+      {
+        "objectName": "inspectorbg"
       },
       {
         "objectName": "object_select_bg"

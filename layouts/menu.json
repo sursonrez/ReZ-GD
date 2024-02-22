@@ -54,7 +54,7 @@
       "layer": "",
       "name": "buttonout",
       "persistentUuid": "7c4bb159-e3ae-4fcd-858e-50d3626fe4e5",
-      "width": 176,
+      "width": 247,
       "x": 30,
       "y": 170,
       "zOrder": 2,
@@ -77,7 +77,7 @@
       "layer": "",
       "name": "buttonout",
       "persistentUuid": "e6f0513b-fd32-41f4-b94c-f854c622eeee",
-      "width": 176,
+      "width": 247,
       "x": 30,
       "y": 250,
       "zOrder": 2,
@@ -106,9 +106,9 @@
       "layer": "",
       "name": "buttonout",
       "persistentUuid": "8102166a-2afa-4c88-a2d5-853c6c22bbdf",
-      "width": 423,
+      "width": 675,
       "x": 30,
-      "y": 635,
+      "y": 625,
       "zOrder": 2,
       "numberProperties": [],
       "stringProperties": [],
@@ -126,6 +126,21 @@
           "value": "Logged in as: "
         }
       ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "accounttext",
+      "persistentUuid": "f062c0ba-8715-4548-bde8-1983c4225aae",
+      "width": 0,
+      "x": 709,
+      "y": 666,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
@@ -144,6 +159,47 @@
       "variables": [],
       "effects": [],
       "behaviors": []
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "accounttext",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "< Click to go to your Account (Manage Levels and Options)",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "< Click to go to your Account (Manage Levels and Options)",
+        "font": "",
+        "textAlignment": "left",
+        "characterSize": 20,
+        "color": "0;0;0"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -151,6 +207,9 @@
     "children": [
       {
         "objectName": "outline"
+      },
+      {
+        "objectName": "accounttext"
       }
     ]
   },
@@ -173,7 +232,7 @@
             "buttontext",
             "id",
             "=",
-            "500"
+            "1"
           ]
         },
         {
@@ -182,55 +241,6 @@
           },
           "parameters": [],
           "subInstructions": [
-            {
-              "type": {
-                "value": "KeyReleased"
-              },
-              "parameters": [
-                "",
-                "Return"
-              ]
-            },
-            {
-              "type": {
-                "value": "KeyReleased"
-              },
-              "parameters": [
-                "",
-                "NumpadReturn"
-              ]
-            },
-            {
-              "type": {
-                "value": "KeyReleased"
-              },
-              "parameters": [
-                "",
-                "Space"
-              ]
-            },
-            {
-              "type": {
-                "value": "Gamepads::C_Button_released"
-              },
-              "parameters": [
-                "",
-                "1",
-                "\"A\"",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Gamepads::C_Button_released"
-              },
-              "parameters": [
-                "",
-                "1",
-                "\"Cross\"",
-                ""
-              ]
-            },
             {
               "type": {
                 "value": "BuiltinCommonInstructions::And"
@@ -259,6 +269,199 @@
                 }
               ]
             }
+          ]
+        },
+        {
+          "type": {
+            "value": "VarScene"
+          },
+          "parameters": [
+            "currentbutton",
+            "=",
+            "buttonout.id"
+          ]
+        },
+        {
+          "type": {
+            "value": "LayerVisible"
+          },
+          "parameters": [
+            "",
+            "buttonout.Layer()"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarGlobalTxt"
+          },
+          "parameters": [
+            "LoadDest",
+            "=",
+            "\"Editor\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Scene"
+          },
+          "parameters": [
+            "",
+            "\"Load\"",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarObjet"
+          },
+          "parameters": [
+            "buttonout",
+            "id",
+            "=",
+            "3"
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Or"
+          },
+          "parameters": [],
+          "subInstructions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::And"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "buttonout",
+                    "=",
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": {
+            "value": "VarScene"
+          },
+          "parameters": [
+            "currentbutton",
+            "=",
+            "buttonout.id"
+          ]
+        },
+        {
+          "type": {
+            "value": "LayerVisible"
+          },
+          "parameters": [
+            "",
+            "buttonout.Layer()"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Quit"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarObjet"
+          },
+          "parameters": [
+            "buttonout",
+            "id",
+            "=",
+            "500"
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Or"
+          },
+          "parameters": [],
+          "subInstructions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::And"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "buttonout",
+                    "=",
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": {
+            "value": "VarScene"
+          },
+          "parameters": [
+            "currentbutton",
+            "=",
+            "buttonout.id"
+          ]
+        },
+        {
+          "type": {
+            "value": "LayerVisible"
+          },
+          "parameters": [
+            "",
+            "buttonout.Layer()"
           ]
         }
       ],
@@ -291,15 +494,6 @@
         },
         {
           "type": {
-            "value": "GlobalVariableAsBoolean"
-          },
-          "parameters": [
-            "AccInfo.LoggedIn",
-            ""
-          ]
-        },
-        {
-          "type": {
             "value": "VarObjet"
           },
           "parameters": [
@@ -308,6 +502,13 @@
             "=",
             "500"
           ]
+        },
+        {
+          "type": {
+            "inverted": true,
+            "value": "Firebase::IsSignedIn"
+          },
+          "parameters": []
         }
       ],
       "actions": [
@@ -333,6 +534,14 @@
             "=",
             "buttonout.CenterY()"
           ]
+        },
+        {
+          "type": {
+            "value": "Cache"
+          },
+          "parameters": [
+            "accounttext"
+          ]
         }
       ]
     },
@@ -352,11 +561,79 @@
         },
         {
           "type": {
-            "value": "GlobalVariableAsBoolean"
+            "value": "VarObjet"
           },
           "parameters": [
-            "AccInfo.LoggedIn",
-            "True"
+            "buttonout",
+            "id",
+            "=",
+            "500"
+          ]
+        },
+        {
+          "type": {
+            "value": "Firebase::IsSignedIn"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "buttontext",
+            "Text",
+            "=",
+            "\"Logged in as \"+Firebase::GetUserEmail()"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetCenter"
+          },
+          "parameters": [
+            "buttontext",
+            "=",
+            "buttonout.CenterX()",
+            "=",
+            "buttonout.CenterY()"
+          ]
+        },
+        {
+          "type": {
+            "value": "MettreX"
+          },
+          "parameters": [
+            "accounttext",
+            "=",
+            "buttonout.BoundingBoxRight()+10"
+          ]
+        },
+        {
+          "type": {
+            "value": "Montre"
+          },
+          "parameters": [
+            "accounttext",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarObjet"
+          },
+          "parameters": [
+            "buttontext",
+            "id",
+            "=",
+            "500"
           ]
         },
         {
@@ -374,25 +651,13 @@
       "actions": [
         {
           "type": {
-            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+            "value": "ResizableCapability::ResizableBehavior::SetWidth"
           },
           "parameters": [
-            "buttontext",
-            "Text",
+            "buttonout",
+            "Resizable",
             "=",
-            "\"Logged in as \"+GlobalVariableString(AccInfo.Username)"
-          ]
-        },
-        {
-          "type": {
-            "value": "SetCenter"
-          },
-          "parameters": [
-            "buttontext",
-            "=",
-            "buttonout.CenterX()",
-            "=",
-            "buttonout.CenterY()"
+            "buttontext.Width()+25"
           ]
         }
       ]

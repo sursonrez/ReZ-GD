@@ -183,6 +183,50 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 63,
+      "layer": "SignedIn",
+      "name": "buttonout",
+      "persistentUuid": "4099dde5-9578-4f51-847b-4cb5ea30433e",
+      "width": 198,
+      "x": 30,
+      "y": 113,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 10004
+        },
+        {
+          "folded": true,
+          "name": "text",
+          "type": "string",
+          "value": "Log Out"
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "NotSignedIn",
+      "name": "errortext",
+      "persistentUuid": "ef1ab680-b336-45b4-b9cf-67481f70efab",
+      "width": 0,
+      "x": 30,
+      "y": 263,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
@@ -231,6 +275,47 @@
         "readOnly": false,
         "disabled": false
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "errortext",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "",
+        "font": "",
+        "textAlignment": "left",
+        "characterSize": 20,
+        "color": "0;0;0"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -241,6 +326,9 @@
       },
       {
         "objectName": "password"
+      },
+      {
+        "objectName": "errortext"
       }
     ]
   },
@@ -274,55 +362,6 @@
           "subInstructions": [
             {
               "type": {
-                "value": "KeyReleased"
-              },
-              "parameters": [
-                "",
-                "Return"
-              ]
-            },
-            {
-              "type": {
-                "value": "KeyReleased"
-              },
-              "parameters": [
-                "",
-                "NumpadReturn"
-              ]
-            },
-            {
-              "type": {
-                "value": "KeyReleased"
-              },
-              "parameters": [
-                "",
-                "Space"
-              ]
-            },
-            {
-              "type": {
-                "value": "Gamepads::C_Button_released"
-              },
-              "parameters": [
-                "",
-                "1",
-                "\"A\"",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Gamepads::C_Button_released"
-              },
-              "parameters": [
-                "",
-                "1",
-                "\"Cross\"",
-                ""
-              ]
-            },
-            {
-              "type": {
                 "value": "BuiltinCommonInstructions::And"
               },
               "parameters": [],
@@ -349,6 +388,25 @@
                 }
               ]
             }
+          ]
+        },
+        {
+          "type": {
+            "value": "VarScene"
+          },
+          "parameters": [
+            "currentbutton",
+            "=",
+            "buttonout.id"
+          ]
+        },
+        {
+          "type": {
+            "value": "LayerVisible"
+          },
+          "parameters": [
+            "",
+            "buttonout.Layer()"
           ]
         }
       ],
@@ -387,53 +445,95 @@
           "subInstructions": [
             {
               "type": {
-                "value": "KeyReleased"
+                "value": "BuiltinCommonInstructions::And"
               },
-              "parameters": [
-                "",
-                "Return"
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "buttonout",
+                    "=",
+                    "",
+                    ""
+                  ]
+                }
               ]
-            },
-            {
-              "type": {
-                "value": "KeyReleased"
-              },
-              "parameters": [
-                "",
-                "NumpadReturn"
-              ]
-            },
-            {
-              "type": {
-                "value": "KeyReleased"
-              },
-              "parameters": [
-                "",
-                "Space"
-              ]
-            },
-            {
-              "type": {
-                "value": "Gamepads::C_Button_released"
-              },
-              "parameters": [
-                "",
-                "1",
-                "\"A\"",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Gamepads::C_Button_released"
-              },
-              "parameters": [
-                "",
-                "1",
-                "\"Cross\"",
-                ""
-              ]
-            },
+            }
+          ]
+        },
+        {
+          "type": {
+            "value": "VarScene"
+          },
+          "parameters": [
+            "currentbutton",
+            "=",
+            "buttonout.id"
+          ]
+        },
+        {
+          "type": {
+            "value": "LayerVisible"
+          },
+          "parameters": [
+            "",
+            "buttonout.Layer()"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Firebase::CreateBasicAccount"
+          },
+          "parameters": [
+            "email.Text()",
+            "password.Text()",
+            "error"
+          ]
+        },
+        {
+          "type": {
+            "value": "Wait"
+          },
+          "parameters": [
+            ".1"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarObjet"
+          },
+          "parameters": [
+            "buttonout",
+            "id",
+            "=",
+            "10003"
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Or"
+          },
+          "parameters": [],
+          "subInstructions": [
             {
               "type": {
                 "value": "BuiltinCommonInstructions::And"
@@ -463,17 +563,36 @@
               ]
             }
           ]
+        },
+        {
+          "type": {
+            "value": "VarScene"
+          },
+          "parameters": [
+            "currentbutton",
+            "=",
+            "buttonout.id"
+          ]
+        },
+        {
+          "type": {
+            "value": "LayerVisible"
+          },
+          "parameters": [
+            "",
+            "buttonout.Layer()"
+          ]
         }
       ],
       "actions": [
         {
           "type": {
-            "value": "Firebase::CreateBasicAccount"
+            "value": "Firebase::BasicAccountSignIn"
           },
           "parameters": [
             "email.Text()",
             "password.Text()",
-            ""
+            "error"
           ]
         },
         {
@@ -491,12 +610,217 @@
       "conditions": [
         {
           "type": {
+            "value": "VarObjet"
+          },
+          "parameters": [
+            "buttonout",
+            "id",
+            "=",
+            "10004"
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Or"
+          },
+          "parameters": [],
+          "subInstructions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::And"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "buttonout",
+                    "=",
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": {
+            "value": "VarScene"
+          },
+          "parameters": [
+            "currentbutton",
+            "=",
+            "buttonout.id"
+          ]
+        },
+        {
+          "type": {
+            "value": "LayerVisible"
+          },
+          "parameters": [
+            "",
+            "buttonout.Layer()"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Firebase::Logout"
+          },
+          "parameters": []
+        },
+        {
+          "type": {
+            "value": "Wait"
+          },
+          "parameters": [
+            ".1"
+          ]
+        },
+        {
+          "type": {
+            "value": "Scene"
+          },
+          "parameters": [
+            "",
+            "\"Menu\"",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarSceneTxt"
+          },
+          "parameters": [
+            "error",
+            "=",
+            "\"0\""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "errortext",
+            "Text",
+            "=",
+            "\"\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": true,
+            "value": "VarSceneTxt"
+          },
+          "parameters": [
+            "error",
+            "=",
+            "\"0\""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "errortext",
+            "Text",
+            "=",
+            "\"There was an error, check the Text Inputs.\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
             "value": "Firebase::IsSignedIn"
           },
           "parameters": []
         }
       ],
-      "actions": []
+      "actions": [
+        {
+          "type": {
+            "value": "HideLayer"
+          },
+          "parameters": [
+            "",
+            "\"NotSignedIn\""
+          ]
+        },
+        {
+          "type": {
+            "value": "ShowLayer"
+          },
+          "parameters": [
+            "",
+            "\"SignedIn\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": true,
+            "value": "Firebase::IsSignedIn"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "HideLayer"
+          },
+          "parameters": [
+            "",
+            "\"SignedIn\""
+          ]
+        },
+        {
+          "type": {
+            "value": "ShowLayer"
+          },
+          "parameters": [
+            "",
+            "\"NotSignedIn\""
+          ]
+        }
+      ]
     }
   ],
   "layers": [
