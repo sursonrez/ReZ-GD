@@ -1414,27 +1414,19 @@
                 "objectsList",
                 "Resizable",
                 "objectsbg.Width()-10",
-                "objectsbg.Height()-50"
+                "objectsbg.Height()/2"
               ]
             },
             {
               "type": {
-                "value": "SetCenterY"
+                "value": "MettreXY"
               },
               "parameters": [
                 "objectsList",
                 "=",
-                "objectsbg.CenterY()"
-              ]
-            },
-            {
-              "type": {
-                "value": "MettreX"
-              },
-              "parameters": [
-                "objectsList",
+                "objectsbg.X()+5",
                 "=",
-                "objectsbg.X()+5"
+                "objectsbg.Y()+5"
               ]
             }
           ]
@@ -1480,7 +1472,7 @@
                     "objectlistitem",
                     "Resizable",
                     "=",
-                    "objectsbg.Width()-10"
+                    "objectlistitem.Height()"
                   ]
                 },
                 {
@@ -1490,17 +1482,6 @@
                   "parameters": [
                     "",
                     "objectlistitem",
-                    "objectsList",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SpriteMasking::Mask"
-                  },
-                  "parameters": [
-                    "",
-                    "objectlistitemtitle",
                     "objectsList",
                     ""
                   ]
@@ -2294,6 +2275,17 @@
                 },
                 {
                   "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "foldericon",
+                    "Scale",
+                    "=",
+                    "1.5"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "ModVarObjetTxt"
                   },
                   "parameters": [
@@ -2305,10 +2297,12 @@
                 },
                 {
                   "type": {
-                    "value": "SetCenterY"
+                    "value": "SetCenter"
                   },
                   "parameters": [
                     "foldericon",
+                    "=",
+                    "objectlistitem.CenterX()",
                     "=",
                     "objectlistitem.CenterY()"
                   ]
@@ -2355,17 +2349,17 @@
                   "parameters": [
                     "objectlistitemtitle",
                     "=",
-                    "objectlistitem.X() + 15"
+                    "objectlistitem.BoundingBoxRight()+10"
                   ]
                 },
                 {
                   "type": {
-                    "value": "MettreX"
+                    "value": "SetCenterX"
                   },
                   "parameters": [
                     "foldericon",
                     "=",
-                    "(objectlistitem.X() + objectlistitem.Width()) - 36"
+                    "objectlistitem.CenterX()"
                   ]
                 }
               ]
@@ -2558,6 +2552,35 @@
                     "=",
                     "objectlistitem.folder"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenter"
+                  },
+                  "parameters": [
+                    "Object",
+                    "=",
+                    "objectlistitem.CenterX()",
+                    "=",
+                    "objectlistitem.CenterY()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "objectsbg",
+                    "Resizable",
+                    "=",
+                    "objectlistitem.Width()+20"
+                  ]
                 }
               ]
             },
@@ -2578,12 +2601,12 @@
               "actions": [
                 {
                   "type": {
-                    "value": "MettreX"
+                    "value": "SetCenterX"
                   },
                   "parameters": [
                     "Object",
                     "=",
-                    "objectlistitem.BoundingBoxRight() - 38"
+                    "objectlistitem.CenterX()"
                   ]
                 }
               ]
