@@ -2176,75 +2176,6 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "objectlistitemtitle",
-                    "objectlistitem.X() + 5",
-                    "objectlistitem.CenterY() - (objectlistitemtitle.Height() / 2)",
-                    "\"ObjListItems\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ScalableCapability::ScalableBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "foldericon",
-                    "Scale",
-                    "=",
-                    "1.5"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "objectlistitemtitle",
-                    "Text",
-                    "=",
-                    "objectlistitem.title"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetCenterY"
-                  },
-                  "parameters": [
-                    "objectlistitemtitle",
-                    "=",
-                    "objectlistitem.CenterY()"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ModVarObjetTxt"
-                  },
-                  "parameters": [
-                    "objectlistitemtitle",
-                    "folder",
-                    "=",
-                    "objectlistitem.folder"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::ForEach",
-              "object": "objectlistitem",
-              "conditions": [
-                {
-                  "type": {
                     "value": "ObjectVariableAsBoolean"
                   },
                   "parameters": [
@@ -2306,6 +2237,17 @@
                     "=",
                     "objectlistitem.CenterY()"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "foldericon",
+                    "Scale",
+                    "=",
+                    "1.5"
+                  ]
                 }
               ]
             },
@@ -2349,7 +2291,7 @@
                   "parameters": [
                     "objectlistitemtitle",
                     "=",
-                    "objectlistitem.BoundingBoxRight()+10"
+                    "objectlistitem.BoundingBoxRight()+20"
                   ]
                 },
                 {
@@ -2569,6 +2511,225 @@
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "ObjectVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Object",
+                    "UiComp",
+                    "True"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetY"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Scale",
+                    "=",
+                    "Object.Scale::X()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "objectlistitem",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "objectlistitemtitle",
+                    "objectlistitem.BoundingBoxRight()+15",
+                    "objectlistitem.Y()",
+                    "\"UI\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "objectlistitemtitle",
+                    "Text",
+                    "=",
+                    "objectlistitem.title"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "objectlistitemtitle",
+                    "=",
+                    "objectlistitem.CenterY()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjetTxt"
+                  },
+                  "parameters": [
+                    "objectlistitemtitle",
+                    "folder",
+                    "=",
+                    "objectlistitem.folder"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "objectlistitemtitle",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "titleobjbg",
+                    "objectlistitemtitle.X()",
+                    "objectlistitemtitle.Y()",
+                    "\"UI\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "=",
+                    "objectlistitemtitle.ZOrder()-2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "Resizable",
+                    "objectlistitemtitle.Width()",
+                    "objectlistitemtitle.Height()+10"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "OpacityCapability::OpacityBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "Opacity",
+                    "=",
+                    "172.5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjetTxt"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "folder",
+                    "=",
+                    "objectlistitemtitle.folder"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "=",
+                    "objectlistitemtitle.CenterY()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "folder",
+                    "=",
+                    "VariableString(currentfolder)"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Montre"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "folder",
+                    "=",
+                    "VariableString(currentfolder)"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Cache"
+                  },
+                  "parameters": [
+                    "titleobjbg"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
                 {
@@ -2580,6 +2741,16 @@
                     "Resizable",
                     "=",
                     "objectlistitem.Width()+20"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreX"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "=",
+                    "objectlistitemtitle.X()"
                   ]
                 }
               ]
