@@ -80,50 +80,64 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Camera",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "objectsbg",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "inspectorbg",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
           "actions": [
             {
               "type": {
-                "value": "ClampCamera"
+                "value": "DragCameraWithPointer::DragCameraWithPointer"
               },
               "parameters": [
                 "",
-                "-400",
-                "-400",
-                "bounds.X()+bounds.Width()+400",
-                "bounds.Y()+bounds.Height()+400",
+                "0",
                 "",
+                "\"both\"",
+                "Middle",
                 ""
               ]
             },
             {
               "type": {
-                "value": "SetCameraCenterX"
+                "value": "Tween::TweenBehavior::AddObjectVariableTween3"
               },
               "parameters": [
-                "",
-                "=",
-                "CameraCenterX(\"\", )",
-                "\"ContextWindow\"",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetCameraCenterY"
-              },
-              "parameters": [
-                "",
-                "=",
-                "CameraCenterY(\"\", )",
-                "\"ContextWindow\"",
+                "zoom",
+                "Tween",
+                "\"zoom\"",
+                "value",
+                "zoom.value+(MouseWheelDelta()/200)",
+                "\"easeOutQuint\"",
+                ".2",
                 ""
               ]
             }
@@ -366,6 +380,74 @@
                 "gridsize",
                 "=",
                 "8"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetCameraCenterX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CameraCenterX(\"\", )",
+                "\"ContextWindow\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraCenterY"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CameraCenterY(\"\", )",
+                "\"ContextWindow\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteSlider::PanelSpriteSlider::SetValue"
+              },
+              "parameters": [
+                "zoom",
+                "=",
+                "zoom.value",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenCameraZoom2"
+              },
+              "parameters": [
+                "",
+                "\"zoom\"",
+                "zoom.Value()",
+                "",
+                "\"easeOutQuart\"",
+                ".3"
+              ]
+            },
+            {
+              "type": {
+                "value": "ClampCamera"
+              },
+              "parameters": [
+                "",
+                "-400",
+                "-400",
+                "bounds.X()+bounds.Width()+400",
+                "bounds.Y()+bounds.Height()+400",
+                "",
+                ""
               ]
             }
           ]
@@ -1403,6 +1485,18 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "I added hide inspectorbg, pls do not remove, its cluttery on the screen and may be removed for a new edit system idk\n"
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -1413,7 +1507,7 @@
               "parameters": [
                 "objectsList",
                 "Resizable",
-                "objectsbg.Width()-10",
+                "objectsbg.Width()*4",
                 "objectsbg.Height()/2"
               ]
             },
@@ -1427,6 +1521,98 @@
                 "objectsbg.X()+5",
                 "=",
                 "objectsbg.Y()+5"
+              ]
+            },
+            {
+              "type": {
+                "value": "SpriteMasking::Mask"
+              },
+              "parameters": [
+                "",
+                "titleobjbg",
+                "objectsList",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SpriteMasking::Mask"
+              },
+              "parameters": [
+                "",
+                "foldericon",
+                "objectsList",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SpriteMasking::Mask"
+              },
+              "parameters": [
+                "",
+                "objectlistitemtitle",
+                "objectsList",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "extraobjlistbg",
+                "=",
+                "objectsbg.X()+5",
+                "=",
+                "objectsbg.Y()+5"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "extraobjlistbg",
+                "Resizable",
+                "objectsbg.Width()-10",
+                "objectsbg.Height()/2"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "inspectorbg"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Object",
+                "UiComp",
+                "True"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SpriteMasking::Mask"
+              },
+              "parameters": [
+                "",
+                "Object",
+                "objectsList",
+                ""
               ]
             }
           ]
@@ -1594,7 +1780,7 @@
                   "parameters": [
                     "",
                     "<",
-                    "360",
+                    "350",
                     "\"ObjListItems\"",
                     ""
                   ]
@@ -1608,7 +1794,7 @@
                   "parameters": [
                     "",
                     "=",
-                    "360",
+                    "350",
                     "\"ObjListItems\"",
                     ""
                   ]
@@ -2558,7 +2744,7 @@
                     "objectlistitemtitle",
                     "objectlistitem.BoundingBoxRight()+15",
                     "objectlistitem.Y()",
-                    "\"UI\""
+                    "\"ObjListItems\""
                   ]
                 },
                 {
@@ -2616,7 +2802,7 @@
                     "titleobjbg",
                     "objectlistitemtitle.X()",
                     "objectlistitemtitle.Y()",
-                    "\"UI\""
+                    "\"ObjListItems\""
                   ]
                 },
                 {
@@ -2636,7 +2822,7 @@
                   "parameters": [
                     "titleobjbg",
                     "Resizable",
-                    "objectlistitemtitle.Width()",
+                    "objectlistitemtitle.Width()+10",
                     "objectlistitemtitle.Height()+10"
                   ]
                 },
@@ -2751,6 +2937,16 @@
                     "titleobjbg",
                     "=",
                     "objectlistitemtitle.X()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreX"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "-",
+                    "5"
                   ]
                 }
               ]

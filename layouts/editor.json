@@ -18,7 +18,7 @@
     "gridColor": 0,
     "gridAlpha": 0.11,
     "snap": true,
-    "zoomFactor": 0.4633111824513977,
+    "zoomFactor": 0.5117784035210179,
     "windowMask": false
   },
   "objectsGroups": [
@@ -956,6 +956,76 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UI",
+      "name": "zoom",
+      "persistentUuid": "27824bca-488e-4b88-b634-6753405938ac",
+      "width": 0,
+      "x": 0,
+      "y": -303,
+      "zOrder": 16,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UI",
+      "name": "extraobjlistbg",
+      "persistentUuid": "45073818-6aa8-4228-abe4-06a5931db0a7",
+      "width": 0,
+      "x": -320,
+      "y": 16,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 64,
+      "layer": "ObjListItems",
+      "name": "objectlistitem",
+      "persistentUuid": "592fb481-d59d-4591-a248-3265ee72ef54",
+      "width": 64,
+      "x": 16,
+      "y": 944,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "position",
+          "type": "number",
+          "value": 2
+        },
+        {
+          "folded": true,
+          "name": "folder",
+          "type": "string",
+          "value": "floors"
+        },
+        {
+          "folded": true,
+          "name": "object",
+          "type": "string",
+          "value": "fading_block"
+        },
+        {
+          "folded": true,
+          "name": "title",
+          "type": "string",
+          "value": "Fading Block"
+        }
+      ]
     }
   ],
   "objects": [
@@ -2324,6 +2394,162 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "05b0eb2d13ff37b70927d0184d4705e9c39c0b8fece7463127c4fe9eb65bb422",
+      "name": "zoom",
+      "type": "PanelSpriteSlider::PanelSpriteSlider",
+      "variables": [
+        {
+          "folded": true,
+          "name": "value",
+          "type": "number",
+          "value": 1
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "content": {
+        "LabelMargin": 8,
+        "BarLeftPadding": 31,
+        "BarRightPadding": 31,
+        "MaxValue": 6,
+        "MinValue": 0.3,
+        "StepSize": 0.01
+      },
+      "childrenContent": {
+        "Background": {
+          "bottomMargin": 31,
+          "height": 63,
+          "leftMargin": 31,
+          "rightMargin": 31,
+          "texture": "Small Plastic Green Round Slider Border.png",
+          "tiled": false,
+          "topMargin": 31,
+          "width": 583
+        },
+        "FillBar": {
+          "bottomMargin": 0,
+          "height": 16,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "Transparent.png",
+          "tiled": false,
+          "topMargin": 0,
+          "width": 16
+        },
+        "Label": {
+          "bold": false,
+          "italic": false,
+          "smoothed": true,
+          "underlined": false,
+          "string": "It displays the value when it changes.",
+          "font": "",
+          "textAlignment": "",
+          "characterSize": 20,
+          "color": {
+            "b": 221,
+            "g": 221,
+            "r": 221
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "It displays the value when it changes.",
+            "font": "",
+            "textAlignment": "",
+            "characterSize": 20,
+            "color": "221;221;221"
+          }
+        },
+        "Thumb": {
+          "bottomMargin": 0,
+          "height": 59,
+          "leftMargin": 0,
+          "rightMargin": 0,
+          "texture": "Small Plastic Green Round Slider Thumb.png",
+          "tiled": false,
+          "topMargin": 0,
+          "width": 63
+        }
+      }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "extraobjlistbg",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite11",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -2394,6 +2620,12 @@
       },
       {
         "objectName": "titleobjbg"
+      },
+      {
+        "objectName": "zoom"
+      },
+      {
+        "objectName": "extraobjlistbg"
       }
     ]
   },
