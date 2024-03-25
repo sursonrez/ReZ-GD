@@ -1,0 +1,142 @@
+{
+  "associatedLayout": "Hub",
+  "name": "MobileUI",
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 4,
+      "height": 131,
+      "layer": "MobileUI",
+      "name": "buttons",
+      "persistentUuid": "43d12694-354b-4fd8-9b43-d14e9488a501",
+      "width": 131,
+      "x": 236,
+      "y": 571,
+      "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 4,
+      "height": 131,
+      "layer": "MobileUI",
+      "name": "buttons",
+      "persistentUuid": "9542c443-f892-4091-ad9c-bb57977c0900",
+      "width": 131,
+      "x": 60,
+      "y": 571,
+      "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 4,
+      "height": 131,
+      "layer": "MobileUI",
+      "name": "buttons",
+      "persistentUuid": "70861ef5-28ff-4b9a-8bf9-5613ee288319",
+      "width": 131,
+      "x": 424,
+      "y": 569,
+      "zOrder": 1,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 3
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 4,
+      "height": 131,
+      "layer": "MobileUI",
+      "name": "buttons",
+      "persistentUuid": "204ad461-35fa-4c54-a0ab-e7dffcf478bf",
+      "width": 131,
+      "x": 565,
+      "y": 571,
+      "zOrder": 1,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 4,
+      "height": 131,
+      "layer": "MobileUI",
+      "name": "buttons",
+      "persistentUuid": "9ce242fa-4bad-4777-b501-d0ab62c9b8b4",
+      "width": 131,
+      "x": 567,
+      "y": 432,
+      "zOrder": 1,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 2
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "editionSettings": {
+    "grid": false,
+    "gridType": "rectangular",
+    "gridWidth": 32,
+    "gridHeight": 32,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.8,
+    "snap": false,
+    "zoomFactor": 0.4789341884535245,
+    "windowMask": false
+  }
+}

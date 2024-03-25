@@ -265,6 +265,21 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "TouchSimulateMouse"
+              },
+              "parameters": [
+                "",
+                "yes"
+              ]
+            }
+          ]
         }
       ],
       "parameters": []

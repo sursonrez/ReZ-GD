@@ -33,8 +33,8 @@
               "parameters": [
                 "bounds",
                 "Resizable",
-                "Variable(LevelInfo.Width)*16",
-                "Variable(LevelInfo.Height)*16"
+                "Variable(LevelInfo.Width)*32",
+                "Variable(LevelInfo.Height)*32"
               ]
             },
             {
@@ -44,8 +44,8 @@
               "parameters": [
                 "gridmain",
                 "Resizable",
-                "Variable(LevelInfo.Width)*16",
-                "Variable(LevelInfo.Height)*16"
+                "Variable(LevelInfo.Width)*32",
+                "Variable(LevelInfo.Height)*32"
               ]
             },
             {
@@ -55,8 +55,8 @@
               "parameters": [
                 "levelbg",
                 "Resizable",
-                "Variable(LevelInfo.Width)*16",
-                "Variable(LevelInfo.Height)*16"
+                "Variable(LevelInfo.Width)*32",
+                "Variable(LevelInfo.Height)*32"
               ]
             },
             {
@@ -66,8 +66,8 @@
               "parameters": [
                 "gridbackup",
                 "Resizable",
-                "Variable(LevelInfo.Width)*16",
-                "Variable(LevelInfo.Height)*16"
+                "Variable(LevelInfo.Width)*32",
+                "Variable(LevelInfo.Height)*32"
               ]
             }
           ]
@@ -80,6 +80,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Camera",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -390,30 +391,6 @@
           "actions": [
             {
               "type": {
-                "value": "SetCameraCenterX"
-              },
-              "parameters": [
-                "",
-                "=",
-                "CameraCenterX(\"\", )",
-                "\"ContextWindow\"",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetCameraCenterY"
-              },
-              "parameters": [
-                "",
-                "=",
-                "CameraCenterY(\"\", )",
-                "\"ContextWindow\"",
-                ""
-              ]
-            },
-            {
-              "type": {
                 "value": "PanelSpriteSlider::PanelSpriteSlider::SetValue"
               },
               "parameters": [
@@ -438,6 +415,19 @@
             },
             {
               "type": {
+                "value": "Tween::TweenCameraZoom2"
+              },
+              "parameters": [
+                "",
+                "\"zoom2\"",
+                "zoom.Value()",
+                "\"ContextWindow\"",
+                "\"easeOutQuart\"",
+                ".3"
+              ]
+            },
+            {
+              "type": {
                 "value": "ClampCamera"
               },
               "parameters": [
@@ -447,6 +437,30 @@
                 "bounds.X()+bounds.Width()+400",
                 "bounds.Y()+bounds.Height()+400",
                 "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraCenterX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CameraCenterX(\"\", )",
+                "\"ContextWindow\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraCenterY"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CameraCenterY(\"\", )",
+                "\"ContextWindow\"",
                 ""
               ]
             }
@@ -488,7 +502,7 @@
                 "LevelInfo",
                 "Text",
                 "=",
-                "\"Width: \"+ToString(Variable(LevelInfo.Width)*16)+\" Tiles, Height: \"+ToString(Variable(LevelInfo.Height)*16)+\" Tiles\""
+                "\"Width: \"+ToString(Variable(LevelInfo.Width))+\" Tiles, Height: \"+ToString(Variable(LevelInfo.Height))+\" Tiles\""
               ]
             },
             {
@@ -499,6 +513,87 @@
                 "LevelInfo",
                 "=",
                 "LevelName.X()+LevelName.Width()+5"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelname"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "editlevelname",
+                "Text",
+                "=",
+                "VariableString(LevelInfo.Name)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelwidth"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "editlevelwidth",
+                "Text",
+                "=",
+                "VariableString(LevelInfo.Width)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelheight"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "editlevelheight",
+                "Text",
+                "=",
+                "VariableString(LevelInfo.Height)"
               ]
             }
           ]
@@ -516,202 +611,6 @@
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
-          "name": "FixBounds",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "PosX"
-                  },
-                  "parameters": [
-                    "Object",
-                    "<",
-                    "0"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectVariableAsBoolean"
-                  },
-                  "parameters": [
-                    "Object",
-                    "ghost",
-                    "False"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectVariableAsBoolean"
-                  },
-                  "parameters": [
-                    "Object",
-                    "UiComp",
-                    "False"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "Object",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BoundingBoxRight"
-                  },
-                  "parameters": [
-                    "Object",
-                    ">",
-                    "bounds.X()+bounds.Width()"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectVariableAsBoolean"
-                  },
-                  "parameters": [
-                    "Object",
-                    "ghost",
-                    "False"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectVariableAsBoolean"
-                  },
-                  "parameters": [
-                    "Object",
-                    "UiComp",
-                    "False"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "Object",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "PosY"
-                  },
-                  "parameters": [
-                    "Object",
-                    "<",
-                    "0"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectVariableAsBoolean"
-                  },
-                  "parameters": [
-                    "Object",
-                    "ghost",
-                    "False"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectVariableAsBoolean"
-                  },
-                  "parameters": [
-                    "Object",
-                    "UiComp",
-                    "False"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "Object",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BoundingBoxBottom"
-                  },
-                  "parameters": [
-                    "Object",
-                    ">",
-                    "bounds.Y()+bounds.Height()"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectVariableAsBoolean"
-                  },
-                  "parameters": [
-                    "Object",
-                    "ghost",
-                    "False"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ObjectVariableAsBoolean"
-                  },
-                  "parameters": [
-                    "Object",
-                    "UiComp",
-                    "False"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "Object",
-                    ""
-                  ]
-                }
-              ]
-            }
-          ],
-          "parameters": []
-        },
         {
           "type": "BuiltinCommonInstructions::Comment",
           "color": {
@@ -763,6 +662,18 @@
               },
               "parameters": [
                 "objectsbg",
+                ">",
+                "objectsbg.X()+225",
+                "\"UI\""
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "inspectorbg",
                 ">",
                 "objectsbg.X()+225",
                 "\"UI\""
@@ -827,6 +738,18 @@
                 "MouseX()",
                 "MouseY()",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "Object",
+                "=",
+                "MouseX(\"\", )-(Object.Width()/2)",
+                "=",
+                "MouseY(\"\", )-(Object.Height()/2)"
               ]
             },
             {
@@ -1139,9 +1062,9 @@
               "parameters": [
                 "Object",
                 "=",
-                "MouseX(\"\", )",
+                "MouseX(\"\", )-(Object.Width()/2)",
                 "=",
-                "MouseY(\"\", )"
+                "MouseY(\"\", )-(Object.Height()/2)"
               ]
             },
             {
@@ -1428,38 +1351,6 @@
       "colorR": 74,
       "creationTime": 0,
       "folded": true,
-      "name": "Inspect Panel",
-      "source": "",
-      "type": "BuiltinCommonInstructions::Group",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
-              },
-              "parameters": [
-                "inspectorbg",
-                "Tween",
-                "\"x2\"",
-                "SceneWindowWidth()-inspectorbg.Width()",
-                "\"easeOutCubic\"",
-                ".3",
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "parameters": []
-    },
-    {
-      "colorB": 228,
-      "colorG": 176,
-      "colorR": 74,
-      "creationTime": 0,
       "name": "Object Panel",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1485,18 +1376,6 @@
           ]
         },
         {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "I added hide inspectorbg, pls do not remove, its cluttery on the screen and may be removed for a new edit system idk\n"
-        },
-        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -1507,8 +1386,8 @@
               "parameters": [
                 "objectsList",
                 "Resizable",
-                "objectsbg.Width()*4",
-                "objectsbg.Height()/2"
+                "objectsbg.Width()*10",
+                "objectsbg.Height()/1.5"
               ]
             },
             {
@@ -1520,18 +1399,7 @@
                 "=",
                 "objectsbg.X()+5",
                 "=",
-                "objectsbg.Y()+5"
-              ]
-            },
-            {
-              "type": {
-                "value": "SpriteMasking::Mask"
-              },
-              "parameters": [
-                "",
-                "titleobjbg",
-                "objectsList",
-                ""
+                "SceneWindowHeight()-(objectsList.Height()+5)"
               ]
             },
             {
@@ -1563,9 +1431,9 @@
               "parameters": [
                 "extraobjlistbg",
                 "=",
-                "objectsbg.X()+5",
+                "objectsList.X()",
                 "=",
-                "objectsbg.Y()+5"
+                "objectsList.Y()"
               ]
             },
             {
@@ -1576,15 +1444,44 @@
                 "extraobjlistbg",
                 "Resizable",
                 "objectsbg.Width()-10",
-                "objectsbg.Height()/2"
+                "objectsList.Height()"
               ]
             },
             {
               "type": {
-                "value": "Cache"
+                "value": "SetCenterX"
               },
               "parameters": [
-                "inspectorbg"
+                "objectsList",
+                "=",
+                "objectsbg.CenterX()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Layer"
+              },
+              "parameters": [
+                "titleobjbg",
+                "\"ObjListItems\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SpriteMasking::Mask"
+              },
+              "parameters": [
+                "",
+                "titleobjbg",
+                "objectsList",
+                ""
               ]
             }
           ]
@@ -1618,10 +1515,94 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "extraobjlistbg",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonPressed"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "SystemInfo::IsMobile"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "camstarty",
+                "=",
+                "MouseY(\"ObjListItems\", )"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonPressed"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "SystemInfo::IsMobile"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetCameraCenterY"
+              },
+              "parameters": [
+                "",
+                "+",
+                "(Variable(camstarty)-MouseY(\"ObjListItems\", ))/4",
+                "\"ObjListItems\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
           "colorB": 228,
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Objects",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1642,12 +1623,32 @@
                 },
                 {
                   "type": {
-                    "value": "MettreX"
+                    "value": "MettreY"
+                  },
+                  "parameters": [
+                    "toollistitem",
+                    "=",
+                    "objectsbg.Y()+5 + (toollistitem.position * (toollistitem.Height()+5))"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterX"
                   },
                   "parameters": [
                     "objectlistitem",
                     "=",
-                    "objectsbg.X()+10"
+                    "extraobjlistbg.CenterX()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterX"
+                  },
+                  "parameters": [
+                    "toollistitem",
+                    "=",
+                    "extraobjlistbg.CenterX()"
                   ]
                 },
                 {
@@ -1687,6 +1688,15 @@
                     "",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "saveopen",
+                    "False"
+                  ]
                 }
               ],
               "actions": [
@@ -1697,7 +1707,7 @@
                   "parameters": [
                     "",
                     "+",
-                    "MouseWheelDelta()/5",
+                    "0-(MouseWheelDelta()/5)",
                     "\"ObjListItems\"",
                     ""
                   ]
@@ -2003,6 +2013,33 @@
               "conditions": [
                 {
                   "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "objectlistitemtitle",
+                    "folder",
+                    "=",
+                    "\"all\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Montre"
+                  },
+                  "parameters": [
+                    "objectlistitemtitle",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
                     "inverted": true,
                     "value": "VarObjetTxt"
                   },
@@ -2065,6 +2102,18 @@
                     "folder",
                     "=",
                     "VariableString(currentfolder)"
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "objectlistitemtitle",
+                    "folder",
+                    "=",
+                    "\"all\""
                   ]
                 }
               ],
@@ -2245,6 +2294,86 @@
               "conditions": [
                 {
                   "type": {
+                    "inverted": true,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "objectlistitem",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                  },
+                  "parameters": [
+                    "objectlistitem",
+                    "Tween",
+                    "\"opacity\"",
+                    "30",
+                    "\"easeOutQuart\"",
+                    ".2",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectVariableTween3"
+                  },
+                  "parameters": [
+                    "objectlistitem",
+                    "Tween",
+                    "\"objuiscale\"",
+                    "objuiscale",
+                    "32",
+                    "\"easeOutQuint\"",
+                    ".2",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "objectlistitem",
+                    "object",
+                    "=",
+                    "VariableString(selectedobj)"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                  },
+                  "parameters": [
+                    "objectlistitem",
+                    "Tween",
+                    "\"opacity\"",
+                    "130",
+                    "\"easeOutQuart\"",
+                    ".2",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
                     "value": "SourisSurObjet"
                   },
                   "parameters": [
@@ -2274,7 +2403,64 @@
                     "objectlistitem",
                     "Tween",
                     "\"opacity\"",
-                    "225",
+                    "80",
+                    "\"easeOutQuart\"",
+                    ".2",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectVariableTween3"
+                  },
+                  "parameters": [
+                    "objectlistitem",
+                    "Tween",
+                    "\"objuiscale\"",
+                    "objuiscale",
+                    "36",
+                    "\"easeOutQuint\"",
+                    ".2",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "toollistitem",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                  },
+                  "parameters": [
+                    "toollistitem",
+                    "Tween",
+                    "\"opacity\"",
+                    "80",
                     "\"easeOutQuart\"",
                     ".2",
                     ""
@@ -2315,7 +2501,63 @@
                     "objectlistitem",
                     "Tween",
                     "\"opacity\"",
-                    "200",
+                    "120",
+                    "\"easeOutQuart\"",
+                    ".2",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectVariableTween3"
+                  },
+                  "parameters": [
+                    "objectlistitem",
+                    "Tween",
+                    "\"objuiscale\"",
+                    "objuiscale",
+                    "25",
+                    "\"easeOutQuint\"",
+                    ".2",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "toollistitem",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                  },
+                  "parameters": [
+                    "toollistitem",
+                    "Tween",
+                    "\"opacity\"",
+                    "120",
                     "\"easeOutQuart\"",
                     ".2",
                     ""
@@ -2332,7 +2574,7 @@
                     "value": "SourisSurObjet"
                   },
                   "parameters": [
-                    "objectlistitem",
+                    "toollistitem",
                     "",
                     "",
                     ""
@@ -2345,10 +2587,10 @@
                     "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
                   },
                   "parameters": [
-                    "objectlistitem",
+                    "toollistitem",
                     "Tween",
                     "\"opacity\"",
-                    "172.5",
+                    "30",
                     "\"easeOutQuart\"",
                     ".2",
                     ""
@@ -2482,6 +2724,16 @@
                 },
                 {
                   "type": {
+                    "value": "MettreX"
+                  },
+                  "parameters": [
+                    "toollistitemtitle",
+                    "=",
+                    "objectlistitem.BoundingBoxRight()+20"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetCenterX"
                   },
                   "parameters": [
@@ -2497,17 +2749,6 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "SourisSurObjet"
-                  },
-                  "parameters": [
-                    "controls_for_devs_and_playtest",
-                    "",
-                    "",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
                     "value": "MouseButtonReleased"
                   },
                   "parameters": [
@@ -2516,17 +2757,7 @@
                   ]
                 }
               ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "controls_for_devs_and_playtest",
-                    ""
-                  ]
-                }
-              ]
+              "actions": []
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -2547,20 +2778,6 @@
                   },
                   "parameters": [
                     "12.5"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
-                  },
-                  "parameters": [
-                    "controls_for_devs_and_playtest",
-                    "Tween",
-                    "\"opacity\"",
-                    "0",
-                    "\"easeInOutQuad\"",
-                    "2.5",
-                    "yes"
                   ]
                 }
               ]
@@ -2783,6 +3000,122 @@
             },
             {
               "type": "BuiltinCommonInstructions::ForEach",
+              "object": "toollistitem",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "toollistitemtitle",
+                    "toollistitem.BoundingBoxRight()+15",
+                    "toollistitem.Y()",
+                    "\"UI\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "toollistitemtitle",
+                    "Text",
+                    "=",
+                    "toollistitem.title"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "toollistitemtitle",
+                    "=",
+                    "toollistitem.CenterY()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjetTxt"
+                  },
+                  "parameters": [
+                    "toollistitemtitle",
+                    "folder",
+                    "=",
+                    "\"all\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "toollistitem",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "toollisticon",
+                    "toollistitem.X()",
+                    "toollistitem.Y()",
+                    "\"UI\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetIndex"
+                  },
+                  "parameters": [
+                    "toollisticon",
+                    "Animation",
+                    "=",
+                    "toollistitem.icon"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "toollisticon",
+                    "Scale",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "toollisticon",
+                    "=",
+                    "toollistitem.CenterY()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
               "object": "objectlistitemtitle",
               "conditions": [
                 {
@@ -2861,6 +3194,85 @@
               ]
             },
             {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "toollistitemtitle",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "titleobjbg",
+                    "toollistitemtitle.X()",
+                    "toollistitemtitle.Y()",
+                    "\"UI\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "=",
+                    "toollistitemtitle.ZOrder()-2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "Resizable",
+                    "toollistitemtitle.Width()+10",
+                    "objectlistitemtitle.Height()+10"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "OpacityCapability::OpacityBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "Opacity",
+                    "=",
+                    "172.5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "=",
+                    "toollistitemtitle.CenterY()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjetTxt"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "folder",
+                    "=",
+                    "\"all\""
+                  ]
+                }
+              ]
+            },
+            {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -2892,6 +3304,33 @@
               "conditions": [
                 {
                   "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "folder",
+                    "=",
+                    "\"all\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Montre"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
                     "inverted": true,
                     "value": "VarObjetTxt"
                   },
@@ -2900,6 +3339,18 @@
                     "folder",
                     "=",
                     "VariableString(currentfolder)"
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "titleobjbg",
+                    "folder",
+                    "=",
+                    "\"all\""
                   ]
                 }
               ],
@@ -2947,6 +3398,16 @@
                     "titleobjbg",
                     "-",
                     "5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterX"
+                  },
+                  "parameters": [
+                    "toollisticon",
+                    "=",
+                    "toollistitem.CenterX()"
                   ]
                 }
               ]
@@ -3027,6 +3488,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Context Window/Object Editing",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3103,6 +3565,15 @@
           "conditions": [
             {
               "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Right"
+              ]
+            },
+            {
+              "type": {
                 "inverted": true,
                 "value": "KeyPressed"
               },
@@ -3118,15 +3589,6 @@
               "parameters": [
                 "",
                 "LControl"
-              ]
-            },
-            {
-              "type": {
-                "value": "MouseButtonReleased"
-              },
-              "parameters": [
-                "",
-                "Right"
               ]
             }
           ],
@@ -3480,7 +3942,933 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "name": "Playtest",
+      "folded": true,
+      "name": "LevelIfno",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreY"
+              },
+              "parameters": [
+                "LevelName",
+                "=",
+                "10"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCenterX"
+              },
+              "parameters": [
+                "LevelName",
+                "=",
+                "SceneWindowWidth()/2"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreY"
+              },
+              "parameters": [
+                "LevelInfo",
+                "=",
+                "LevelName.BoundingBoxBottom()+10"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCenterX"
+              },
+              "parameters": [
+                "LevelInfo",
+                "=",
+                "SceneWindowWidth()/2"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectScaleTween3"
+              },
+              "parameters": [
+                "LevelName",
+                "Tween",
+                "\"scale\"",
+                ".5",
+                "\"easeOutQuart\"",
+                "1",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectScaleTween3"
+              },
+              "parameters": [
+                "LevelInfo",
+                "Tween",
+                "\"scale\"",
+                ".5",
+                "\"easeOutQuart\"",
+                "1",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "LevelName",
+                    "=",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "LevelInfo",
+                    "=",
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": {
+                "value": "AjoutObjConcern"
+              },
+              "parameters": [
+                "",
+                "LevelName"
+              ]
+            },
+            {
+              "type": {
+                "value": "AjoutObjConcern"
+              },
+              "parameters": [
+                "",
+                "LevelInfo"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "LevelName",
+                "Tween",
+                "\"opac\"",
+                "20",
+                "\"easeOutQuint\"",
+                ".1",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "LevelInfo",
+                "Tween",
+                "\"opac\"",
+                "20",
+                "\"easeOutQuint\"",
+                ".1",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "LevelName",
+                "=",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "LevelInfo",
+                "=",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "LevelName",
+                "Tween",
+                "\"opac\"",
+                "172.5",
+                "\"easeOutQuint\"",
+                ".1",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "LevelInfo",
+                "Tween",
+                "\"opac\"",
+                "172.5",
+                "\"easeOutQuint\"",
+                ".1",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Tools",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "toollistitem",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "toollistitem",
+                "ID",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PanelSpriteSlider::PanelSpriteSlider::SetValue"
+              },
+              "parameters": [
+                "zoom",
+                "=",
+                "1",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectVariableTween3"
+              },
+              "parameters": [
+                "zoom",
+                "Tween",
+                "\"zoom\"",
+                "value",
+                "1",
+                "\"easeOutQuint\"",
+                "1",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Layer"
+                  },
+                  "parameters": [
+                    "player_spawnpoint",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::TweenCameraPosition2"
+                  },
+                  "parameters": [
+                    "",
+                    "\"pos\"",
+                    "player_spawnpoint.CenterX()",
+                    "player_spawnpoint.CenterY()",
+                    "",
+                    "\"easeOutQuint\"",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "toollistitem",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "toollistitem",
+                "ID",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "objsel",
+                "=",
+                "-2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "Object",
+                "id",
+                "=",
+                "Variable(objsel)"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "toollistitem",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "toollistitem",
+                        "ID",
+                        "=",
+                        "4"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "KeyReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Back"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Object",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "objsel",
+                "=",
+                "-1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "toollistitem",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "toollistitem",
+                "ID",
+                "=",
+                "3"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "objsel",
+                "=",
+                "-1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "selectedobj",
+                "=",
+                "\"0\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "toollistitem",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "toollistitem",
+                "ID",
+                "=",
+                "5"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PushScene"
+              },
+              "parameters": [
+                "",
+                "\"Menu\""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Cam Drag on Mobile",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SystemInfo::IsMobile"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "camdrag_mobile",
+                "=",
+                "SceneWindowWidth()-(camdrag_mobile.Width()+20)",
+                "=",
+                "SceneWindowHeight()-(camdrag_mobile.Height()+20)"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TouchSimulateMouse"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    ".001"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TouchSimulateMouse"
+                  },
+                  "parameters": [
+                    "",
+                    "yes"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "camdrag_mobile",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "camdrag_mobile",
+                "Tween",
+                "\"opac\"",
+                "60",
+                "\"easeOutSine\"",
+                ".2",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "camdrag_mobile",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "camdrag_mobile",
+                "Tween",
+                "\"opac\"",
+                "10",
+                "\"easeOutSine\"",
+                ".2",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "disabled": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "SystemInfo::IsMobile"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "camdrag_mobile",
+                "=",
+                "SceneWindowWidth()-(camdrag_mobile.Width()+20)",
+                "=",
+                "SceneWindowHeight()+900"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "camstarty",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonPressed"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "camdrag_mobile",
+                "=",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "camstarty",
+                "True"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "camdrag_mobile",
+                "Resizable",
+                "(SceneWindowWidth()/2)-(SceneWindowWidth()-inspectorbg.X())",
+                "SceneWindowHeight()"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreY"
+              },
+              "parameters": [
+                "camdrag_mobile",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "camdrag_mobile",
+                "=",
+                "inspectorbg.X()-camdrag_mobile.Width()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "camstarty",
+                "True"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "objectsbg",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "DraggableBehavior::Dragged"
+              },
+              "parameters": [
+                "sizeobj",
+                "Draggable"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "DraggableBehavior::Dragged"
+              },
+              "parameters": [
+                "moveobj",
+                "Draggable"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "DragCameraWithPointer::DragCameraWithPointer"
+              },
+              "parameters": [
+                "",
+                "0",
+                "",
+                "\"both\"",
+                "Left",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Development",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
@@ -3493,7 +4881,7 @@
               },
               "parameters": [
                 "",
-                "Return"
+                "m"
               ]
             }
           ],
@@ -3605,6 +4993,42 @@
                     "Save_LoadArray",
                     "Object.Variable(id)"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushString"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.VariableString(textvar1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushString"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.VariableString(textvar2)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.Variable(numvar1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.Variable(numvar2)"
+                  ]
                 }
               ]
             }
@@ -3619,7 +5043,7 @@
               },
               "parameters": [
                 "",
-                "Return"
+                "m"
               ]
             }
           ],
@@ -3634,12 +5058,12 @@
             },
             {
               "type": {
-                "value": "ModVarGlobalTxt"
+                "value": "Clipboard::WriteText"
               },
               "parameters": [
-                "PlaytestLevelCode",
-                "=",
-                "ToJSON(Save_LoadArray)"
+                "",
+                "ToJSON(Save_LoadArray)",
+                ""
               ]
             },
             {
@@ -3652,11 +5076,316 @@
             },
             {
               "type": {
-                "value": "Scene"
+                "value": "VariableClearChildren"
               },
               "parameters": [
-                "",
-                "\"EditorPlaytest\"",
+                "Save_LoadArray"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "FixBounds",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "Object",
+                "<",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Object",
+                "UiComp",
+                "False"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelname"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelwidth"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelheight"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "Object",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BoundingBoxRight"
+              },
+              "parameters": [
+                "Object",
+                ">",
+                "bounds.X()+bounds.Width()"
+              ]
+            },
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Object",
+                "UiComp",
+                "False"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelname"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelwidth"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelheight"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "Object",
+                "=",
+                "(bounds.X()+bounds.Width())-Object.Width()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosY"
+              },
+              "parameters": [
+                "Object",
+                "<",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Object",
+                "UiComp",
+                "False"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelname"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelwidth"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelheight"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreY"
+              },
+              "parameters": [
+                "Object",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BoundingBoxBottom"
+              },
+              "parameters": [
+                "Object",
+                ">",
+                "bounds.Y()+bounds.Height()"
+              ]
+            },
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Object",
+                "UiComp",
+                "False"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelname"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelwidth"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelheight"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreY"
+              },
+              "parameters": [
+                "Object",
+                "=",
+                "(bounds.Y()+bounds.Height())-Object.Height()"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Edit Level Properties",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::SetLabelText"
+              },
+              "parameters": [
+                "loadbtn",
+                "\"Load \"+VariableString(LevelInfo.Name)+\".rezgd\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::SetLabelText"
+              },
+              "parameters": [
+                "savebtn",
+                "\"Save as \"+VariableString(LevelInfo.Name)+\".rezgd\"",
                 ""
               ]
             }
@@ -3667,19 +5396,946 @@
           "conditions": [
             {
               "type": {
-                "value": "DepartScene"
+                "value": "VarScene"
               },
               "parameters": [
+                "objsel",
+                "=",
+                "-2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "editobjtitle",
+                "Text",
+                "=",
+                "VariableString(LevelInfo.Name)"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "moveobj"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "sizeobj"
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "editlevelname",
                 ""
               ]
             },
             {
               "type": {
-                "value": "GlobalVariableAsBoolean"
+                "value": "Montre"
               },
               "parameters": [
-                "fromPT",
+                "editlevelwidth",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "editlevelheight",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::SetWrapping"
+              },
+              "parameters": [
+                "editobjtitleinfo",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::WrappingWidth"
+              },
+              "parameters": [
+                "editobjtitleinfo",
+                "=",
+                "inspectorbg.Width()-10"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "FileSystem::PathExists"
+                  },
+                  "parameters": [
+                    "FileSystem::DocumentsPath()+\"/ReZLevels/\"+VariableString(LevelInfo.Name)+\".rezgd\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "editobjtitleinfo",
+                    "Text",
+                    "=",
+                    "\"Saves to: \"+FileSystem::DocumentsPath()+\"/ReZLevels/\"+VariableString(LevelInfo.Name)+\".rezgd\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "FileSystem::PathExists"
+                  },
+                  "parameters": [
+                    "FileSystem::DocumentsPath()+\"/ReZLevels/\"+VariableString(LevelInfo.Name)+\".rezgd\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "editobjtitleinfo",
+                    "Text",
+                    "=",
+                    "\"Overwrites: \"+FileSystem::DocumentsPath()+\"/ReZLevels/\"+VariableString(LevelInfo.Name)+\".rezgd\""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::Value"
+              },
+              "parameters": [
+                "editlevelname",
+                "Text",
+                "!=",
+                "\"\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "LevelInfo.Name",
+                "=",
+                "editlevelname.Text::Value()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::Value"
+              },
+              "parameters": [
+                "editlevelwidth",
+                "Text",
+                "!=",
+                "\"\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "LevelInfo.Width",
+                "=",
+                "editlevelwidth.Text::Value()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::Value"
+              },
+              "parameters": [
+                "editlevelheight",
+                "Text",
+                "!=",
+                "\"\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "LevelInfo.Height",
+                "=",
+                "editlevelheight.Text::Value()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "objsel",
+                "=",
+                "-2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "editlevelname"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "editlevelwidth"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "editlevelheight"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+              },
+              "parameters": [
+                "editlevelname",
+                "Resizable",
+                "=",
+                "extrainslistbg.Width()-10"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+              },
+              "parameters": [
+                "editlevelwidth",
+                "Resizable",
+                "=",
+                "extrainslistbg.Width()-10"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+              },
+              "parameters": [
+                "editlevelheight",
+                "Resizable",
+                "=",
+                "extrainslistbg.Width()-10"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+              },
+              "parameters": [
+                "loadbtn",
+                "Resizable",
+                "=",
+                "extrainslistbg.Width()-10"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+              },
+              "parameters": [
+                "savebtn",
+                "Resizable",
+                "=",
+                "extrainslistbg.Width()-10"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+              },
+              "parameters": [
+                "folderbtn",
+                "Resizable",
+                "=",
+                "inspectorbg.Width()-10"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetCenterX"
+              },
+              "parameters": [
+                "editlevelname",
+                "=",
+                "inspectorbg.CenterX()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCenterX"
+              },
+              "parameters": [
+                "editlevelwidth",
+                "=",
+                "inspectorbg.CenterX()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCenterX"
+              },
+              "parameters": [
+                "editlevelheight",
+                "=",
+                "inspectorbg.CenterX()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCenterX"
+              },
+              "parameters": [
+                "loadbtn",
+                "=",
+                "inspectorbg.CenterX()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCenterX"
+              },
+              "parameters": [
+                "savebtn",
+                "=",
+                "inspectorbg.CenterX()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCenterX"
+              },
+              "parameters": [
+                "folderbtn",
+                "=",
+                "inspectorbg.CenterX()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Extra Hide Drags",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarScene"
+              },
+              "parameters": [
+                "objsel",
+                "<",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Draggables"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Discord",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarGlobalTxt"
+              },
+              "parameters": [
+                "DiscordPresence",
+                "=",
+                "\"Editing \"+VariableString(LevelInfo.Name)"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Fix Visible Handles After",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "Object",
+                "id",
+                "=",
+                "Variable(objsel)"
+              ]
+            },
+            {
+              "type": {
+                "value": "PickedInstancesCount"
+              },
+              "parameters": [
+                "Object",
+                "<",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Draggables"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "TextBoxes",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "textobj",
+          "conditions": [
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "textobj",
+                "hasbox",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Layer"
+              },
+              "parameters": [
+                "textobj",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "textobj",
+                "ghost",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "edittext",
+                "0",
+                "0",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "edittext",
+                "Resizable",
+                "200",
+                "32"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "edittext",
+                "id",
+                "=",
+                "textobj.Variable(id)"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreY"
+              },
+              "parameters": [
+                "edittext",
+                "=",
+                "textobj.Y()-(edittext.Height()+10)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCenterX"
+              },
+              "parameters": [
+                "edittext",
+                "=",
+                "textobj.CenterX()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "textobj",
+                "hasbox",
                 "True"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "edittext",
+                "id",
+                "=",
+                "Variable(objsel)"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "edittext",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "edittext",
+                "id",
+                "=",
+                "Variable(objsel)"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "edittext"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "edittext"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "textobj",
+                "id",
+                "=",
+                "Variable(objsel)"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjetTxt"
+              },
+              "parameters": [
+                "textobj",
+                "textvar1",
+                "=",
+                "edittext.Text::Value()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "textobj",
+                "Text",
+                "=",
+                "textobj.textvar1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "edittext"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "textobj",
+                "id",
+                "=",
+                "Variable(objsel)"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "edittext",
+                "Text",
+                "=",
+                "textobj.textvar1"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Edit Level",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarScene"
+              },
+              "parameters": [
+                "objsel",
+                "=",
+                "-2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+              },
+              "parameters": [
+                "inspectorbg",
+                "Tween",
+                "\"x\"",
+                "SceneWindowWidth()-inspectorbg.Width()",
+                "\"easeOutSine\"",
+                ".2",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "VarScene"
+              },
+              "parameters": [
+                "objsel",
+                "=",
+                "-2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+              },
+              "parameters": [
+                "inspectorbg",
+                "Tween",
+                "\"x\"",
+                "SceneWindowWidth()+100",
+                "\"easeOutSine\"",
+                ".2",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Playtest",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "toollistitem",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "toollistitem",
+                        "ID",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "KeyReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Return"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "KeyReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "NumpadReturn"
+                  ]
+                }
               ]
             }
           ],
@@ -3694,135 +6350,257 @@
             },
             {
               "type": {
-                "value": "JSONToVariableStructure"
+                "value": "SceneVariablePushString"
               },
               "parameters": [
-                "GlobalVariableString(PlaytestLevelCode)",
-                "Save_LoadArray"
+                "Save_LoadArray",
+                "VariableString(LevelInfo.Name)"
               ]
             },
             {
               "type": {
-                "value": "ModVarScene"
+                "value": "SceneVariablePushNumber"
               },
               "parameters": [
-                "LoadClimb",
-                "=",
-                "0"
+                "Save_LoadArray",
+                "Variable(LevelInfo.Width)"
               ]
             },
             {
               "type": {
-                "value": "SetGlobalVariableAsBoolean"
+                "value": "SceneVariablePushNumber"
               },
               "parameters": [
-                "fromPT",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "lastid",
-                "=",
-                "0"
+                "Save_LoadArray",
+                "Variable(LevelInfo.Height)"
               ]
             }
           ],
           "events": [
             {
-              "type": "BuiltinCommonInstructions::Repeat",
-              "repeatExpression": "VariableChildCount(Save_LoadArray)/8",
-              "conditions": [],
-              "actions": [
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "Object",
+              "conditions": [
                 {
                   "type": {
-                    "value": "CreateByName"
+                    "value": "ObjectVariableAsBoolean"
                   },
                   "parameters": [
-                    "",
                     "Object",
-                    "Save_LoadArray[LoadClimb]",
-                    "Save_LoadArray[LoadClimb+1]",
-                    "Save_LoadArray[LoadClimb+2]",
+                    "ghost",
                     ""
                   ]
                 },
                 {
                   "type": {
-                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                    "value": "ObjectVariableAsBoolean"
                   },
                   "parameters": [
                     "Object",
-                    "Resizable",
-                    "=",
-                    "Save_LoadArray[LoadClimb+3]"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetAngle"
-                  },
-                  "parameters": [
-                    "Object",
-                    "=",
-                    "Save_LoadArray[LoadClimb+4]"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ResizableCapability::ResizableBehavior::SetHeight"
-                  },
-                  "parameters": [
-                    "Object",
-                    "Resizable",
-                    "=",
-                    "Save_LoadArray[LoadClimb+5]"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ChangePlan"
-                  },
-                  "parameters": [
-                    "Object",
-                    "=",
-                    "Save_LoadArray[LoadClimb+6]"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ModVarObjet"
-                  },
-                  "parameters": [
-                    "Object",
-                    "id",
-                    "=",
-                    "Save_LoadArray[LoadClimb+7]"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ModVarScene"
-                  },
-                  "parameters": [
-                    "LoadClimb",
-                    "+",
-                    "8"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ModVarScene"
-                  },
-                  "parameters": [
-                    "lastid",
-                    "+",
-                    "1"
+                    "UiComp",
+                    ""
                   ]
                 }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SceneVariablePushString"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.ObjectName()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.X()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.Y()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.Width()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.Angle()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.Height()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.ZOrder()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.Variable(id)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushString"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.VariableString(textvar1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushString"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.VariableString(textvar2)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.Variable(numvar1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.Variable(numvar2)"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "toollistitem",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "toollistitem",
+                        "ID",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "KeyReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Return"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                ".02"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarGlobalTxt"
+              },
+              "parameters": [
+                "PlaytestLevelCode",
+                "=",
+                "ToJSON(Save_LoadArray)"
+              ]
+            },
+            {
+              "type": {
+                "value": "PushScene"
+              },
+              "parameters": [
+                "",
+                "\"EditorPlaytest\""
               ]
             }
           ]
@@ -3835,6 +6613,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Files",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3869,11 +6648,90 @@
           "conditions": [
             {
               "type": {
-                "value": "KeyReleased"
+                "value": "BuiltinCommonInstructions::Or"
               },
-              "parameters": [
-                "",
-                "z"
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "savebtn",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "toollistitem",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "toollistitem",
+                        "ID",
+                        "=",
+                        "6"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "LControl"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "s"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ]
+                }
               ]
             }
           ],
@@ -3884,6 +6742,33 @@
               },
               "parameters": [
                 "Save_LoadArray"
+              ]
+            },
+            {
+              "type": {
+                "value": "SceneVariablePushString"
+              },
+              "parameters": [
+                "Save_LoadArray",
+                "VariableString(LevelInfo.Name)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SceneVariablePushNumber"
+              },
+              "parameters": [
+                "Save_LoadArray",
+                "Variable(LevelInfo.Width)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SceneVariablePushNumber"
+              },
+              "parameters": [
+                "Save_LoadArray",
+                "Variable(LevelInfo.Height)"
               ]
             }
           ],
@@ -3985,6 +6870,42 @@
                     "Save_LoadArray",
                     "Object.Variable(id)"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushString"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.VariableString(textvar1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushString"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.VariableString(textvar2)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.Variable(numvar1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Save_LoadArray",
+                    "Object.Variable(numvar2)"
+                  ]
                 }
               ]
             }
@@ -3995,11 +6916,90 @@
           "conditions": [
             {
               "type": {
-                "value": "KeyReleased"
+                "value": "BuiltinCommonInstructions::Or"
               },
-              "parameters": [
-                "",
-                "z"
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "savebtn",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "toollistitem",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "toollistitem",
+                        "ID",
+                        "=",
+                        "6"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "LControl"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "s"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ]
+                }
               ]
             }
           ],
@@ -4024,11 +7024,76 @@
             },
             {
               "type": {
-                "value": "FileSystem::SaveStringToFileSync"
+                "value": "FileSystem::SaveVariableToJSONFileSync"
               },
               "parameters": [
-                "ToJSON(Save_LoadArray)",
-                "FileSystem::DocumentsPath()+\"/ReZLevels/\"+VariableString(LevelInfo.Name)",
+                "Save_LoadArray",
+                "FileSystem::DocumentsPath()+\"/ReZLevels/\"+VariableString(LevelInfo.Name)+\".rezgd\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "saveicon",
+                "0",
+                "0",
+                "\"UI\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Layer"
+              },
+              "parameters": [
+                "Object",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Object",
+                "ghost",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "TextInput::TextInputObject::Focused"
+              },
+              "parameters": [
+                "editlevelname"
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "loadbtn",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Object",
                 ""
               ]
             }
@@ -4039,40 +7104,28 @@
           "conditions": [
             {
               "type": {
-                "value": "KeyReleased"
+                "value": "FileSystem::PathExists"
               },
               "parameters": [
-                "",
-                "x"
+                "FileSystem::DocumentsPath()+\"/ReZLevels/\"+VariableString(LevelInfo.Name)+\".rezgd\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "loadbtn",
+                ""
               ]
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "LireFichierTxt"
-              },
-              "parameters": [
-                "\"Levels\"",
-                "\"Level \"+VariableString(LevelInfo.Name)",
-                "ToJSON(Save_LoadArray)",
-                "loadjson"
-              ]
-            },
-            {
-              "type": {
                 "value": "VariableClearChildren"
               },
               "parameters": [
-                "Save_LoadArray"
-              ]
-            },
-            {
-              "type": {
-                "value": "JSONToVariableStructure"
-              },
-              "parameters": [
-                "VariableString(loadjson)",
                 "Save_LoadArray"
               ]
             },
@@ -4088,11 +7141,57 @@
             },
             {
               "type": {
-                "value": "SetGlobalVariableAsBoolean"
+                "await": true,
+                "value": "FileSystem::LoadVariableFromJSONFileSync"
               },
               "parameters": [
-                "fromPT",
+                "Save_LoadArray",
+                "FileSystem::DocumentsPath()+\"/ReZLevels/\"+VariableString(LevelInfo.Name)+\".rezgd\"",
+                "",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "editlevelwidth",
+                "Text",
+                "=",
+                "Save_LoadArray[1]"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "editlevelname",
+                "Text",
+                "=",
+                "Save_LoadArray[0]"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "editlevelheight",
+                "Text",
+                "=",
+                "Save_LoadArray[2]"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "LoadClimb",
+                "=",
+                "3"
               ]
             },
             {
@@ -4100,14 +7199,14 @@
                 "value": "Wait"
               },
               "parameters": [
-                ".02"
+                ".1"
               ]
             }
           ],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Repeat",
-              "repeatExpression": "VariableChildCount(Save_LoadArray)/8",
+              "repeatExpression": "VariableChildCount(Save_LoadArray)/12",
               "conditions": [],
               "actions": [
                 {
@@ -4178,166 +7277,46 @@
                 },
                 {
                   "type": {
-                    "value": "ModVarScene"
+                    "value": "ModVarObjetTxt"
                   },
                   "parameters": [
-                    "LoadClimb",
-                    "+",
-                    "8"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyReleased"
-              },
-              "parameters": [
-                "",
-                "x"
-              ]
-            },
-            {
-              "type": {
-                "value": "Layer"
-              },
-              "parameters": [
-                "Object",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "ObjectVariableAsBoolean"
-              },
-              "parameters": [
-                "Object",
-                "ghost",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Delete"
-              },
-              "parameters": [
-                "Object",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyReleased"
-              },
-              "parameters": [
-                "",
-                "c"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "await": true,
-                "value": "FileSystem::LoadStringFromFileAsync"
-              },
-              "parameters": [
-                "Save_LoadArray",
-                "FileSystem::DocumentsPath()+\"/ReZLevels\"",
-                "",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "LoadClimb",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "VariableClearChildren"
-              },
-              "parameters": [
-                "Save_LoadArray"
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Repeat",
-              "repeatExpression": "VariableChildCount(Save_LoadArray)/7",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "CreateByName"
-                  },
-                  "parameters": [
-                    "",
                     "Object",
-                    "Save_LoadArray[LoadClimb]",
-                    "Save_LoadArray[LoadClimb+1]",
-                    "Save_LoadArray[LoadClimb+2]",
-                    ""
+                    "textvar1",
+                    "=",
+                    "Save_LoadArray[LoadClimb+8]"
                   ]
                 },
                 {
                   "type": {
-                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                    "value": "ModVarObjetTxt"
                   },
                   "parameters": [
                     "Object",
-                    "Resizable",
+                    "textvar2",
                     "=",
-                    "Save_LoadArray[LoadClimb+3]"
+                    "Save_LoadArray[LoadClimb+9]"
                   ]
                 },
                 {
                   "type": {
-                    "value": "SetAngle"
+                    "value": "ModVarObjet"
                   },
                   "parameters": [
                     "Object",
+                    "numvar1",
                     "=",
-                    "Save_LoadArray[LoadClimb+4]"
+                    "Save_LoadArray[LoadClimb+10]"
                   ]
                 },
                 {
                   "type": {
-                    "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                    "value": "ModVarObjet"
                   },
                   "parameters": [
                     "Object",
-                    "Resizable",
+                    "numvar2",
                     "=",
-                    "Save_LoadArray[LoadClimb+5]"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ChangePlan"
-                  },
-                  "parameters": [
-                    "Object",
-                    "=",
-                    "Save_LoadArray[LoadClimb+6]"
+                    "Save_LoadArray[LoadClimb+11]"
                   ]
                 },
                 {
@@ -4347,7 +7326,17 @@
                   "parameters": [
                     "LoadClimb",
                     "+",
-                    "7"
+                    "12"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "lastid",
+                    "+",
+                    "1"
                   ]
                 }
               ]
@@ -4362,10 +7351,634 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "name": "Object Icons on UI",
+      "folded": true,
+      "name": "Select on Mobile",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
-      "events": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "Object",
+                "=",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Object",
+                "UiComp",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Object",
+                "ghost",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "DoubleClick::HasDoubleClicked"
+              },
+              "parameters": [
+                "",
+                "Left",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "VarSceneTxt"
+              },
+              "parameters": [
+                "selectedobj",
+                "=",
+                "\"0\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SystemInfo::IsMobile"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "objsel",
+                "=",
+                "Object.Variable(id)"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Zoom on Mobile",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SystemInfo::IsMobile"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PinchGesture::SetCameraPinchConstraint"
+              },
+              "parameters": [
+                "",
+                "\"Zoom only\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PinchGesture::EnableCameraPinch"
+              },
+              "parameters": [
+                "",
+                "yes",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "SystemInfo::IsMobile"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "camdrag_mobile",
+                "=",
+                "0",
+                "=",
+                "SceneWindowHeight()*4"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Fixes",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetCameraCenterX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CameraCenterX(\"ObjectsList\", )",
+                "\"ObjListItems\"",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Inspect WIndow",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetCenterX"
+              },
+              "parameters": [
+                "InspectorUIs",
+                "=",
+                "inspectorbg.CenterX()"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Conveyor",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "TiledSpriteObject::XOffset"
+              },
+              "parameters": [
+                "conveyor",
+                "-",
+                "4"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "TiledSpriteObject::XOffset"
+              },
+              "parameters": [
+                "conveyorl",
+                "+",
+                "4"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "SaveTool",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "saveopen",
+                "True"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+              },
+              "parameters": [
+                "objectsbg",
+                "Resizable",
+                "=",
+                "SceneWindowWidth()"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "objectsbg",
+                "=",
+                "0",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "objectsbg",
+                "Opacity",
+                "=",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "extraobjlistbg",
+                "=",
+                "SceneWindowWidth()+9999"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "toollistitem",
+                "=",
+                "SceneWindowWidth()+99999"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "objectsList",
+                "=",
+                "SceneWindowWidth()+9999"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "toollisticon"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "objsel",
+                "=",
+                "-1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "saveopen",
+                "False"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "objectsbg",
+                "Opacity",
+                "=",
+                "255"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "SaveAnim",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "saveicon",
+                "=",
+                "objectsbg.BoundingBoxRight()+5",
+                "=",
+                "SceneWindowHeight()-(saveicon.Height()+5)"
+              ]
+            },
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "saveicon",
+                "Opacity",
+                "-",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectScaleTween3"
+              },
+              "parameters": [
+                "saveicon",
+                "Tween",
+                "\"sc\"",
+                "2.5",
+                "\"easeOutQuint\"",
+                ".2",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::Value"
+              },
+              "parameters": [
+                "saveicon",
+                "Opacity",
+                "<",
+                "5"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "saveicon",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Cursor",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "CursorType::ChangeCursorType"
+              },
+              "parameters": [
+                "",
+                "\"default\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneInstancesCount"
+              },
+              "parameters": [
+                "",
+                "saveicon",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "CursorType::ChangeCursorType"
+              },
+              "parameters": [
+                "",
+                "\"progress\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "objectlistitem",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "CursorType::ChangeCursorType"
+              },
+              "parameters": [
+                "",
+                "\"pointer\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "toollistitem",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "CursorType::ChangeCursorType"
+              },
+              "parameters": [
+                "",
+                "\"pointer\"",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Levels Folder",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "folderbtn",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "LaunchFile"
+              },
+              "parameters": [
+                "FileSystem::DocumentsPath()+\"/ReZLevels\"",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
       "parameters": []
     }
   ]

@@ -18,7 +18,7 @@
     "gridColor": 16777215,
     "gridAlpha": 0.05,
     "snap": true,
-    "zoomFactor": 0.39240300260774735,
+    "zoomFactor": 0.4056349613801574,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -148,7 +148,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "name": "Playtest Options",
+      "name": "Load",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
@@ -167,10 +167,11 @@
           "actions": [
             {
               "type": {
-                "value": "VariableClearChildren"
+                "value": "SetGlobalVariableAsBoolean"
               },
               "parameters": [
-                "Save_LoadArray"
+                "fromPT",
+                ""
               ]
             },
             {
@@ -194,18 +195,57 @@
             },
             {
               "type": {
-                "value": "SetGlobalVariableAsBoolean"
+                "value": "ModVarSceneTxt"
               },
               "parameters": [
-                "fromPT",
-                ""
+                "LevelInfo.Name",
+                "=",
+                "Save_LoadArray[0]"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "LevelInfo.Width",
+                "=",
+                "Save_LoadArray[1]"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "LevelInfo.Height",
+                "=",
+                "Save_LoadArray[2]"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "LoadClimb",
+                "=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                ".02"
               ]
             }
           ],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Repeat",
-              "repeatExpression": "VariableChildCount(Save_LoadArray)/8",
+              "repeatExpression": "VariableChildCount(Save_LoadArray)/12",
               "conditions": [],
               "actions": [
                 {
@@ -276,14 +316,124 @@
                 },
                 {
                   "type": {
+                    "value": "ModVarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "textvar1",
+                    "=",
+                    "Save_LoadArray[LoadClimb+8]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "textvar2",
+                    "=",
+                    "Save_LoadArray[LoadClimb+9]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "numvar1",
+                    "=",
+                    "Save_LoadArray[LoadClimb+10]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Object",
+                    "numvar2",
+                    "=",
+                    "Save_LoadArray[LoadClimb+11]"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "ModVarScene"
                   },
                   "parameters": [
                     "LoadClimb",
                     "+",
-                    "8"
+                    "12"
                   ]
                 }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetGlobalVariableAsBoolean"
+              },
+              "parameters": [
+                "Editing",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Playtest Options",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "_player",
+                "0",
+                "0",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCenter"
+              },
+              "parameters": [
+                "_player",
+                "=",
+                "player_spawnpoint.CenterX()",
+                "=",
+                "player_spawnpoint.CenterY()"
               ]
             }
           ]
@@ -298,17 +448,6 @@
               "parameters": [
                 ""
               ]
-            },
-            {
-              "type": {
-                "value": "PickNearest"
-              },
-              "parameters": [
-                "player_spawnpoint",
-                "0",
-                "0",
-                ""
-              ]
             }
           ],
           "actions": [
@@ -317,19 +456,7 @@
                 "value": "Wait"
               },
               "parameters": [
-                ".1"
-              ]
-            },
-            {
-              "type": {
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "_player",
-                "0",
-                "0",
-                ""
+                ".2"
               ]
             },
             {
@@ -396,21 +523,10 @@
           "actions": [
             {
               "type": {
-                "value": "Scene"
+                "value": "PopScene"
               },
               "parameters": [
-                "",
-                "\"Editor\"",
                 ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetGlobalVariableAsBoolean"
-              },
-              "parameters": [
-                "fromPT",
-                "True"
               ]
             }
           ]
@@ -454,70 +570,24 @@
                     "\"Options\"",
                     ""
                   ]
-                },
-                {
-                  "type": {
-                    "value": "DepartScene"
-                  },
-                  "parameters": [
-                    ""
-                  ]
                 }
               ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "SetCenter"
+                "value": "Scene"
               },
               "parameters": [
-                "_player",
-                "=",
-                "player_spawnpoint.CenterX()",
-                "=",
-                "player_spawnpoint.CenterY()"
-              ]
-            },
-            {
-              "type": {
-                "value": "PlatformBehavior::PlatformerObjectBehavior::SetCurrentFallSpeed"
-              },
-              "parameters": [
-                "_player",
-                "PlatformerObject",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "PlatformBehavior::PlatformerObjectBehavior::SetCurrentSpeed"
-              },
-              "parameters": [
-                "_player",
-                "PlatformerObject",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetObjectVariableAsBoolean"
-              },
-              "parameters": [
-                "_player",
-                "canspin",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetObjectVariableAsBoolean"
-              },
-              "parameters": [
-                "_player",
-                "spin",
+                "",
+                "CurrentSceneName()",
                 ""
               ]
             }
@@ -551,6 +621,189 @@
           ]
         }
       ]
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Camera",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetCameraCenterX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "_player.CenterX()",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraCenterX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "_player.CenterX()",
+                "\"TileBGS\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraCenterY"
+              },
+              "parameters": [
+                "",
+                "=",
+                "_player.CenterY()",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraCenterY"
+              },
+              "parameters": [
+                "",
+                "=",
+                "_player.CenterY()",
+                "\"TileBGS\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ClampCamera"
+              },
+              "parameters": [
+                "",
+                "0",
+                "0",
+                "Variable(LevelInfo.Width)*16",
+                "Variable(LevelInfo.Height)*16",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ClampCamera"
+              },
+              "parameters": [
+                "",
+                "0",
+                "0",
+                "Variable(LevelInfo.Width)*16",
+                "Variable(LevelInfo.Height)*16",
+                "\"TileBGS\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ZoomCamera"
+              },
+              "parameters": [
+                "",
+                "CameraZoom(\"\", )",
+                "\"TileBGS\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SceneBackground"
+              },
+              "parameters": [
+                "",
+                "\"0;0;0\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ZoomCamera"
+              },
+              "parameters": [
+                "",
+                ".8",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "IsOnScreen::InOnScreen::IsOnScreen"
+              },
+              "parameters": [
+                "_player",
+                "",
+                "100",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                ".5"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "CurrentSceneName()",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
@@ -590,6 +843,13 @@
       "include": {
         "includeConfig": 0
       },
+      "target": "Tiles"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
       "target": "Player"
     }
   ],
@@ -609,23 +869,7 @@
       "renderingType": "",
       "visibility": true,
       "cameras": [],
-      "effects": [
-        {
-          "effectType": "Scene3D::HemisphereLight",
-          "name": "3D Light",
-          "doubleParameters": {
-            "elevation": 45,
-            "intensity": 1,
-            "rotation": 0
-          },
-          "stringParameters": {
-            "groundColor": "64;64;64",
-            "skyColor": "255;255;255",
-            "top": "Y-"
-          },
-          "booleanParameters": {}
-        }
-      ]
+      "effects": []
     },
     {
       "ambientLightColorB": 200,
@@ -725,6 +969,10 @@
     {
       "name": "HorizontalDash",
       "type": "AdvancedJump::HorizontalDash"
+    },
+    {
+      "name": "InOnScreen",
+      "type": "IsOnScreen::InOnScreen"
     },
     {
       "name": "Opacity",

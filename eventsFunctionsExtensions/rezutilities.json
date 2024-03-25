@@ -1,0 +1,134 @@
+{
+  "author": "",
+  "category": "",
+  "extensionNamespace": "",
+  "fullName": "ReZUtilities",
+  "helpPath": "",
+  "iconUrl": "",
+  "name": "ReZUtilities",
+  "previewIconUrl": "",
+  "shortDescription": "",
+  "version": "",
+  "description": "Originally automatically extracted from events of the project",
+  "tags": [],
+  "authorIds": [],
+  "dependencies": [],
+  "eventsFunctions": [
+    {
+      "description": "Do something when tool button pressed",
+      "fullName": "When a tool button is pressed",
+      "functionType": "Condition",
+      "group": "Editor",
+      "name": "ToolBTNPressed",
+      "sentence": "When _PARAM2_ is Pressed",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "toollistitem",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "toollistitem",
+                "ID",
+                "=",
+                "ToolItemID"
+              ]
+            }
+          ],
+          "actions": []
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Object",
+          "name": "toollistitem",
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "description": "ID",
+          "name": "ToolItemID",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "",
+      "functionType": "Action",
+      "name": "GetAllFilesinDir",
+      "sentence": "Get all Files in DIr",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const fs = require('fs');",
+            "",
+            "// Function to get all files in a directory",
+            "function getAllFilesInDirectory(directory) {",
+            "    return new Promise((resolve, reject) => {",
+            "        fs.readdir(directory, (err, files) => {",
+            "            if (err) {",
+            "                reject(err);",
+            "            } else {",
+            "                resolve(files);",
+            "            }",
+            "        });",
+            "    });",
+            "}",
+            "",
+            "// Usage example with directory as parameter",
+            "function getFilesInGivenDirectory(directoryPath) {",
+            "    getAllFilesInDirectory(directoryPath)",
+            "        .then(files => {",
+            "            console.log(files); // Array of file names in the directory",
+            "        })",
+            "        .catch(err => {",
+            "            console.error('Error reading directory:', err);",
+            "        });",
+            "}",
+            "",
+            "// Usage example",
+            "const directoryPath = gdjs.evtTools.files.getDocumentsPath() + \"/ReZLevels\"; // Assuming this is the correct method",
+            "getFilesInGivenDirectory(directoryPath);",
+            ""
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    }
+  ],
+  "eventsBasedBehaviors": [],
+  "eventsBasedObjects": []
+}

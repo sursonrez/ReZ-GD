@@ -1,5 +1,5 @@
 {
-  "associatedLayout": "Untitled scene",
+  "associatedLayout": "Hub",
   "lastChangeTimeStamp": 0,
   "name": "Player",
   "events": [
@@ -8,7 +8,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Dash (GD Refrence??!?!?)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -93,6 +92,36 @@
                     "\"Square\"",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "buttons",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "buttons",
+                        "id",
+                        "=",
+                        "4"
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -106,6 +135,53 @@
                 "_player",
                 "HorizontalDash",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "AdvancedJump::HorizontalDash::IsDashing"
+              },
+              "parameters": [
+                "_player",
+                "HorizontalDash",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "djump",
+                "0",
+                "0",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "djump",
+                "=",
+                "_player.PointX(\"aura\")",
+                "=",
+                "_player.PointY(\"aura\")"
               ]
             }
           ]
@@ -145,7 +221,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Controls",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -198,6 +273,36 @@
                     "1",
                     "\"Left\"",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "buttons",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "buttons",
+                        "id",
+                        "=",
+                        "1"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -264,6 +369,36 @@
                     "1",
                     "\"Right\"",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "buttons",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "buttons",
+                        "id",
+                        "=",
+                        "0"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -338,6 +473,36 @@
                     "1",
                     "\"Cross\"",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "buttons",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "buttons",
+                        "id",
+                        "=",
+                        "3"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -430,7 +595,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Flip",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -470,6 +634,16 @@
                 "=",
                 "-90"
               ]
+            },
+            {
+              "type": {
+                "value": "SetAngle"
+              },
+              "parameters": [
+                "djump",
+                "=",
+                "-180"
+              ]
             }
           ]
         },
@@ -508,6 +682,16 @@
                 "=",
                 "90"
               ]
+            },
+            {
+              "type": {
+                "value": "SetAngle"
+              },
+              "parameters": [
+                "djump",
+                "=",
+                "0"
+              ]
             }
           ]
         }
@@ -519,7 +703,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Aura",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -684,7 +867,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Spinning",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -768,6 +950,36 @@
                     "1",
                     "\"Square\"",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "buttons",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "buttons",
+                        "id",
+                        "=",
+                        "2"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -1249,85 +1461,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "disabled": true,
-      "folded": true,
-      "name": "Slopes",
-      "source": "",
-      "type": "BuiltinCommonInstructions::Group",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "PlatformBehavior::IsOnFloor"
-              },
-              "parameters": [
-                "_player",
-                "PlatformerObject"
-              ]
-            },
-            {
-              "type": {
-                "value": "CollisionNP"
-              },
-              "parameters": [
-                "Floors",
-                "_player",
-                "",
-                "",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetAngle"
-              },
-              "parameters": [
-                "_player",
-                "=",
-                "Floors.Angle()"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": true,
-                "value": "PlatformBehavior::IsOnFloor"
-              },
-              "parameters": [
-                "_player",
-                "PlatformerObject"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetAngle"
-              },
-              "parameters": [
-                "_player",
-                "=",
-                "0"
-              ]
-            }
-          ]
-        }
-      ],
-      "parameters": []
-    },
-    {
-      "colorB": 228,
-      "colorG": 176,
-      "colorR": 74,
-      "creationTime": 0,
       "folded": true,
       "name": "Jump Orb",
       "source": "",
@@ -1432,6 +1565,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Death",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1453,18 +1587,6 @@
             }
           ],
           "actions": [
-            {
-              "type": {
-                "value": "SetCenter"
-              },
-              "parameters": [
-                "_player",
-                "=",
-                "player_spawnpoint.CenterX()",
-                "=",
-                "player_spawnpoint.CenterY()"
-              ]
-            },
             {
               "type": {
                 "value": "Scene"
@@ -1494,18 +1616,6 @@
             }
           ],
           "actions": [
-            {
-              "type": {
-                "value": "SetCenter"
-              },
-              "parameters": [
-                "_player",
-                "=",
-                "player_spawnpoint.CenterX()",
-                "=",
-                "player_spawnpoint.CenterY()"
-              ]
-            },
             {
               "type": {
                 "value": "Scene"
